@@ -1,0 +1,105 @@
+<!-- <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="true"
+    android:fillViewport="true"> -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/layout_background_layer_new" >
+    
+     <RelativeLayout
+         android:id="@+id/rL1"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_centerHorizontal="true" 
+         android:layout_marginTop="10dp"
+         android:layout_marginBottom="10dp">
+
+    <ImageView
+    	    android:id="@+id/imageView1"
+    	    android:layout_width="180dp"
+    	    android:layout_height="60dp"
+    	    android:layout_centerHorizontal="true"
+    	    android:src="@drawable/sxgeo_advance_logo" />
+   
+    </RelativeLayout>
+
+    <RelativeLayout
+    	    android:id="@+id/rLm"
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content"
+    	    android:layout_below="@+id/rL1"
+    	    android:layout_centerHorizontal="true">
+    
+        <android.support.v4.view.ViewPager
+            android:id="@+id/reviewpager"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rL3" />
+
+        <RelativeLayout
+            android:id="@+id/rL3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true" >
+
+            <com.sxgeo.advance.pager.SimpleViewPagerIndicator
+                android:id="@+id/page_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" >
+            </com.sxgeo.advance.pager.SimpleViewPagerIndicator>
+        </RelativeLayout>
+    	  
+    	</RelativeLayout>
+    	<RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/helplayout"
+            android:background="#88666666"
+            android:visibility="gone">
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/left"
+               android:layout_marginTop="41dp"
+               android:id="@+id/imageView"
+               android:layout_alignTop="@+id/btnSatInfohelp"
+               android:layout_toRightOf="@+id/btnSatInfohelp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Click \n on skyplot"
+                android:textColor="@color/white"
+                android:id="@+id/textView"
+                android:layout_alignTop="@+id/imageView"
+                android:layout_toRightOf="@+id/imageView" />
+            <Button
+                android:id="@+id/btnSatInfohelp"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginLeft="10dp"
+
+                android:layout_weight="1"
+                android:background="@drawable/button_background_main_new"
+                android:drawableTop="@drawable/ic_satellite_info"
+                android:gravity="center"
+                android:onClick="buttonClick"
+                android:paddingTop="15dp"
+                android:shadowColor="#000000"
+                android:shadowDy="0"
+                android:shadowRadius="0"
+                android:text="Sky Plot"
+                android:textStyle="normal"
+                android:textColor="@color/black_dashboard"
+                android:textSize="12sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="108dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+<!-- </ScrollView> -->

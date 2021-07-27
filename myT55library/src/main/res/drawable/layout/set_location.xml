@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView 
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+
+<LinearLayout
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:padding="10px"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical">
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Latitude:">
+  </TextView>
+
+  <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="10px"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Deg:">
+    </TextView>
+
+    <EditText
+      android:id="@+id/latitude_edit_deg"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:inputType="numberDecimal"
+      android:text="0">
+    </EditText>
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Min:">
+    </TextView>
+
+    <EditText
+       android:id="@+id/latitude_edit_min"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:inputType="numberDecimal"
+       android:text="0">
+    </EditText>
+
+  </LinearLayout>
+
+  <RadioGroup 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+  
+    <RadioButton
+      android:id="@+id/radio_north"
+      android:checked="false"
+      android:text="N"/>
+
+    <RadioButton
+      android:id="@+id/radio_south"
+      android:checked="false"
+      android:text="S"/>
+
+  </RadioGroup>
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Longitude:">
+  </TextView>
+
+  <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="10px"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Deg:">
+    </TextView>
+
+    <EditText
+      android:id="@+id/longitude_edit_deg"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:inputType="numberDecimal"
+      android:text="0">
+    </EditText>
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Min:">
+    </TextView>
+
+    <EditText
+       android:id="@+id/longitude_edit_min"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:inputType="numberDecimal"
+       android:text="0">
+    </EditText>
+
+  </LinearLayout>
+
+  <RadioGroup 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+  
+    <RadioButton
+      android:id="@+id/radio_east"
+      android:checked="false"
+      android:text="E"/>
+
+    <RadioButton
+      android:id="@+id/radio_west"
+      android:checked="false"
+      android:text="W"/>
+  </RadioGroup>
+
+  <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="10px"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal">
+
+      <Button 
+        android:id="@+id/location_from_device"
+        android:text="Get from device"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+      <Button 
+        android:id="@+id/cancel"
+        android:text="Cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+      <Button 
+        android:id="@+id/ok"
+        android:text="OK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+  </LinearLayout>
+
+</LinearLayout>
+
+</ScrollView>
+

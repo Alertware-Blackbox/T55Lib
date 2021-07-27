@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    
+    
+    <TableRow 
+        android:id="@+id/tblR"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:visibility="gone">
+        
+        <TextView
+		        android:id="@+id/txtProject"
+		        android:layout_width="fill_parent"
+		        android:layout_height="35dp"
+		        android:paddingLeft="10dp"
+		        android:paddingRight="10dp"
+		        android:background="@drawable/layout_text_view"
+		        android:textColor="#000000"
+				android:hint="Select"
+        		android:clickable="true" />
+        
+        <Spinner 
+		        android:id="@+id/spnrProject"
+		        android:layout_width="0dp"
+		        android:layout_height="0dp"
+		        android:paddingLeft="10dp"
+		        android:paddingRight="10dp"
+				android:layout_weight="0.0"/>
+        
+        
+    </TableRow>
+    <Spinner
+        android:id="@+id/spnrProjection"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_weight="0.0"/>
+    <org.osmdroid.views.MapView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/mapview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true" 
+        android:layout_below="@+id/tblR"/>
+    <!--ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"        
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/gps_icon" /-->
+    
+    <!-- <ImageView
+        android:id="@+id/imageNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"        
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/img_next" /> -->
+    
+    <!--ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"        
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/map_center" /-->
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"       
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" 
+        />
+    
+    <ImageView
+        android:id="@+id/centrePlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"              
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/centre_plus" />
+
+</RelativeLayout>

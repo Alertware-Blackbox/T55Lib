@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/layout_background_layer_new"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/fl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_title_bar_new" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_settings"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:text="View Collected Data"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+             android:textColor="@color/black"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_clear_data"
+        android:layout_below="@id/fl1" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp" >
+			<LinearLayout 
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:orientation="horizontal"
+			    android:weightSum="1">
+            <LinearLayout 
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="0.5">
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Project"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black" />
+
+            <Spinner
+                android:id="@+id/spn_project"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" 
+                android:background="@drawable/spinner_bg"/>
+            </LinearLayout>
+			<LinearLayout 
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="0.5">
+            <TextView
+                android:id="@+id/tv_select_form"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Form"
+                 android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Spinner
+                android:id="@+id/spn_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" 
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/spinner_bg"/>
+			</LinearLayout>
+            </LinearLayout>
+            <Button 
+                android:id="@+id/btn_show_map"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/layout_buttons"
+                android:textColor="@color/black"
+                android:layout_gravity="right"
+                android:text="Show in map"
+                android:textSize="13sp"
+                android:visibility="visible"/>
+
+            <HorizontalScrollView
+                        android:id="@+id/horizontalView"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginTop="5dip"
+                        android:scrollbars="vertical" >
+
+                        <LinearLayout
+                            android:id="@+id/ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical" >
+
+                            <TableLayout
+                                android:id="@+id/tableLayout1"
+                                android:layout_width="293dp"
+                                android:layout_height="wrap_content"
+                                android:background="#e7e5e5"
+                                android:isScrollContainer="true"
+                                android:layout_marginRight="0dip"
+                                android:stretchColumns="*" >
+
+                                <TableRow
+                                    android:layout_width="fill_parent"
+                                    android:layout_margin="1dip"
+                                    android:background="#000" >
+
+                                    <TextView
+                                        android:layout_margin="1dip"
+                                        android:background="#e7e5e5"
+                                        android:gravity="left"
+                                        android:text="  Sl.No"
+                                        android:textColor="@android:color/black"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_margin="1dip"
+                                        android:background="#e7e5e5"
+                                        android:text="  Date"
+                                        android:textColor="@android:color/black"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_margin="1dip"
+                                        android:background="#e7e5e5"
+                                        android:layout_marginRight="0dp"
+                                        android:text="  Time"
+                                        android:textColor="@android:color/black"
+                                        android:textStyle="bold" />
+                                </TableRow>
+                            </TableLayout>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    
+
+</RelativeLayout>

@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/layout_background_layer_new">
+
+        <TextView
+            android:id="@+id/txtHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Mark Average Waypoint"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:shadowColor="#000000"
+            android:shadowRadius="0"
+            android:shadowDy="3"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="@drawable/layout_title_bar_new"/>
+
+            <ImageView
+                android:id="@+id/condition"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/conditions"
+                android:layout_gravity="right"
+                android:layout_below="@+id/txtHeader"
+                android:layout_alignRight="@+id/btnsave" />
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/condition"
+                android:id="@+id/radio"
+                android:layout_below="@+id/txtHeader"
+                android:layout_marginTop="20dp" >
+
+                 <RadioGroup
+                    android:id="@+id/radioCustom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                 <RadioButton
+                    android:id="@+id/radioBtnManual"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Manual"
+                    android:textColor="@android:color/black" />
+
+                 <RadioButton
+                    android:id="@+id/radioBtnAuto"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Auto"
+                    android:textColor="@android:color/black" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/radio"
+                android:id="@+id/button"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0.07" >
+
+                <Button
+                    android:id="@+id/btnStart"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/layout_buttons"
+                    android:text="Start"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:layout_weight="0.25"/>
+
+                <Button
+                    android:id="@+id/btnStop"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/layout_buttons"
+                    android:text="Stop"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:layout_weight="0.25"/>
+
+                <ProgressBar
+                    android:id="@+id/pb"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25" />
+
+				<Spinner
+                    android:id="@+id/spinTime"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/spinner_bg" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/projname"
+                android:layout_below="@+id/button"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp" >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Project Name"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="0.5"/>
+
+                <TextView
+                    android:id="@+id/tv_avg_projName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="left"
+                    android:layout_weight="0.5"
+             		android:textColor="@android:color/black"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/wpno"
+                android:layout_below="@+id/projname"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="WayPoint No"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="0.5"/>
+
+                <TextView
+                    android:id="@+id/tv_avg_waypointno"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="left"
+                    android:layout_weight="0.5"
+                    android:textColor="@android:color/black"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/datumformat"
+                android:layout_below="@+id/wpno"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/textViewdatum"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Datum Format"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="0.5"/>
+
+                <TextView
+                    android:id="@+id/tv_datum_format"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="left"
+                    android:layout_weight="0.5"
+                    android:textColor="@android:color/black"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/lat"
+                android:layout_below="@+id/datumformat"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                 >
+
+                <TextView
+                    android:id="@+id/tv_label_lat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Latitude"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="0.5"/>
+
+                <TextView
+                    android:id="@+id/tv_avg_latitude"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="left"
+                    android:layout_weight="0.5"
+             		android:textColor="@android:color/black"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/lat"
+                android:id="@+id/lng"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_label_lng"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Longitude"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="0.5"/>
+
+                <TextView
+                    android:id="@+id/tv_avg_longitude"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="left"
+             		android:layout_weight="0.5"
+             		android:textColor="@android:color/black"/>
+            </LinearLayout>
+
+			<LinearLayout
+                android:id="@+id/ll_zone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lng"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+			    android:visibility="gone">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Zone"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:layout_weight="0.5"/>
+
+                <TextView
+                    android:id="@+id/tv_zone_val"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:gravity="left"
+                    android:layout_weight="0.5"
+                    android:textStyle="normal"
+                    android:textColor="@android:color/black"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/ll_zone"
+                android:id="@+id/alti"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Altitude"
+                    android:textStyle="bold"
+                    android:layout_weight="0.5"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/tv_avg_altitude"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:text=""
+                    android:layout_gravity="right"
+              		android:layout_weight="0.35"
+             		android:textColor="@android:color/black"/>
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_weight="0.15"
+                    android:text="Mts"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/alti"
+                android:id="@+id/satcount"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Sat Count"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="0.5"/>
+
+                <TextView
+                    android:id="@+id/tv_avg_satcount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="left"
+                    android:layout_weight="0.5"
+             		android:textColor="@android:color/black"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/pdop"
+                android:layout_below="@+id/satcount"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="PDOP"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/tv_avg_pdop"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="right"
+                    android:layout_weight="0.5"
+                    android:textColor="@android:color/black"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pdop"
+                android:id="@+id/tag"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_weight="0.5"
+                    android:text="Tag"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"/>
+
+                <Spinner
+                    android:id="@+id/spin_avg_tag"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/spinner_bg" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/tag"
+                android:id="@+id/notes"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Notes"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/ed_avg_notes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_gravity="left"
+                    android:background="@drawable/layout_text_view"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:singleLine="true"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/notes"
+                android:id="@+id/btnsave"
+                android:gravity="bottom|center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.01" >
+
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/layout_buttons"
+                    android:minHeight="10dp"
+                    android:text="Save"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#88666666"
+                android:id="@+id/helplayout"
+                android:visibility="visible">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView1"
+                    android:src="@drawable/left_bend2"
+                    android:visibility="invisible"/>
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/imageViewnext"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/next1"
+                    />
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/imageViewstop"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/exit3"
+                    android:layout_alignParentRight="true"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView2"
+                    android:layout_below="@+id/imageView1"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/left_bend2" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/imageView1"
+                    android:text="Manual average\nwaypoint creation"
+                    android:id="@+id/TextView01"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="60dp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView3"
+                    android:layout_below="@+id/imageView1"
+                    android:layout_marginLeft="200dp"
+                    android:src="@drawable/left_bend2" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/imageView1"
+                    android:id="@+id/TextView02"
+                    android:text="Automatic average\nwaypoint creation"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="240dp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView4"
+                    android:src="@drawable/right_bend2"
+                    android:layout_alignTop="@+id/TextView01"
+                    android:layout_alignLeft="@+id/TextView02" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/TextView03"
+                    android:text="Pre Requisite conditions for\naverage waypoint creation"
+                    android:textColor="@color/white"
+                    android:layout_below="@+id/imageView1"
+                    android:layout_toRightOf="@+id/imageView1" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView5"
+                    android:src="@drawable/left_bend2"
+                    android:layout_below="@+id/TextView01"
+                    android:layout_alignLeft="@+id/TextView01"
+                    android:layout_marginTop="20dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView6"
+                    android:src="@drawable/left_bend2"
+                    android:layout_alignTop="@+id/imageView5"
+                    android:layout_alignLeft="@+id/TextView06" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView7"
+                    android:layout_below="@+id/imageView2"
+                    android:layout_marginLeft="100dp"
+                    android:src="@drawable/left_bend2" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/imageView2"
+                    android:id="@+id/TextView06"
+                    android:text="Selected Project Name"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="140dp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView8"
+                    android:src="@drawable/left_bend2"
+                    android:layout_below="@+id/TextView06"
+                    android:layout_toLeftOf="@+id/imageView4" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/TextView07"
+                    android:text="Waypoint number"
+                    android:textColor="@color/white"
+                    android:layout_below="@+id/imageView6"
+                    android:layout_alignLeft="@+id/imageView3" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView9"
+                    android:src="@drawable/left_bend2"
+                    android:layout_below="@+id/TextView07"
+                    android:layout_alignLeft="@+id/imageView7" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/TextView08"
+                    android:text="Selected Datum format"
+                    android:textColor="@color/white"
+                    android:layout_below="@+id/imageView8"
+                    android:layout_alignLeft="@+id/TextView09" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView10"
+                    android:src="@drawable/left_bend2"
+                    android:layout_below="@+id/imageView8"
+                    android:layout_alignLeft="@+id/imageView9" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/TextView09"
+                    android:text="Current Latitude"
+                    android:textColor="@color/white"
+                    android:layout_below="@+id/imageView9"
+                    android:layout_alignLeft="@+id/imageView17" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView11"
+                    android:layout_below="@+id/imageView9"
+                    android:layout_marginLeft="100dp"
+                    android:src="@drawable/left_bend2" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/TextView10"
+                    android:text="Current Longitude"
+                    android:textColor="@color/white"
+                    android:layout_below="@+id/imageView10"
+                    android:layout_toRightOf="@+id/imageView14" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView12"
+                    android:src="@drawable/left_bend2"
+                    android:layout_below="@+id/imageView9"
+                    android:layout_alignLeft="@+id/imageView10"
+                    android:layout_marginTop="22dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/TextView11"
+                    android:text="Current Altitude"
+                    android:textColor="@color/white"
+                    android:layout_below="@+id/imageView11"
+                    android:layout_toRightOf="@+id/imageView5" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView13"
+                    android:src="@drawable/left_bend2"
+                    android:layout_below="@+id/TextView10"
+                    android:layout_alignLeft="@+id/imageView11" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/TextView12"
+                    android:text="Current Sattelite Count"
+                    android:textColor="@color/white"
+                    android:layout_alignTop="@+id/imageView15"
+                    android:layout_alignLeft="@+id/imageView6" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView14"
+                    android:src="@drawable/left_bend2"
+                    android:layout_below="@+id/imageView11"
+                    android:layout_toRightOf="@+id/imageView1" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/TextView13"
+                    android:text="Current PDOP"
+                    android:textColor="@color/white"
+                    android:layout_alignTop="@+id/imageView17"
+                    android:layout_toRightOf="@+id/imageView15" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView15"
+                    android:src="@drawable/right_bend"
+                    android:layout_below="@+id/TextView16"
+                    android:layout_alignLeft="@+id/imageView13" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/TextView14"
+                    android:text="Tag"
+                    android:textColor="@color/white"
+                    android:layout_below="@+id/imageView13"
+                    android:layout_alignLeft="@+id/TextView12" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView16"
+                    android:src="@drawable/right_bend"
+                    android:layout_alignTop="@+id/TextView12"
+                    android:layout_toRightOf="@+id/imageView13" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/TextView15"
+                    android:text="Notes"
+                    android:textColor="@color/white"
+                    android:layout_alignTop="@+id/TextView14"
+                    android:layout_toRightOf="@+id/imageView6" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView17"
+                    android:src="@drawable/down"
+                    android:layout_below="@+id/imageView12"
+                    android:layout_centerHorizontal="true" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/TextView16"
+                    android:text="Save the average waypoint"
+                    android:textColor="@color/white"
+                    android:layout_alignTop="@+id/imageView17"
+                    android:layout_alignLeft="@+id/imageView3" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>

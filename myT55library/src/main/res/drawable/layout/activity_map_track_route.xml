@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal">
+
+
+    <TableRow
+        android:id="@+id/tblR"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp">
+
+        <TextView
+		        android:id="@+id/txtProject"
+		        android:layout_width="wrap_content"
+		        android:layout_height="35dp"
+		        android:paddingLeft="10dp"
+		        android:paddingRight="10dp"
+		        android:background="@drawable/layout_text_view"
+		        android:textColor="#000000"
+				android:hint="Select"
+				android:layout_weight="0.52"
+				android:layout_marginRight="5dp"
+        		android:clickable="true" />
+
+
+
+        <Spinner
+		        android:id="@+id/spnrProject"
+		        android:layout_width="0dp"
+		        android:layout_height="0dp"
+		        android:paddingLeft="10dp"
+		        android:paddingRight="10dp"
+				android:layout_weight="0.0"/>
+
+        <Spinner
+		        android:id="@+id/spnrTrack"
+		        android:layout_width="0dp"
+		        android:layout_height="0dp"
+		        android:paddingLeft="10dp"
+		        android:paddingRight="10dp"
+				android:layout_weight="0.0"/>
+
+        <Spinner
+		        android:id="@+id/spnrRoute"
+		        android:layout_width="0dp"
+		        android:layout_height="0dp"
+		        android:paddingLeft="10dp"
+		        android:paddingRight="10dp"
+				android:layout_weight="0.0"/>
+
+
+    </TableRow>
+
+
+
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/mapview"
+        android:layout_below="@+id/tblR"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+
+
+
+
+
+    <Spinner
+        android:id="@+id/spnrProjection"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_weight="0.0"/>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+
+
+
+    <ImageView
+        android:id="@+id/centrePlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/centre_plus"
+        android:visibility="gone"/>
+    <RelativeLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/rl_trackdetail"
+        android:layout_alignParentRight="true"
+        android:background="@color/white"
+        android:visibility="visible">
+        <LinearLayout
+            android:id="@+id/ll_trackname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true">
+            <TextView
+                android:id="@+id/tv_label_trackname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:text="Track Name"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_trackvalue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_tracklength"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_trackname">
+            <TextView
+                android:id="@+id/tv_label_tracklength"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:text="Track Length"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_lengthvalue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_tracktime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/ll_tracklength">
+            <TextView
+                android:id="@+id/tv_label_tracktime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:text="Track Time"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true" />
+
+            <TextView
+                android:id="@+id/tv_timevalue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_weight="0.5"
+                android:layout_marginLeft="0dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_trackarea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/ll_tracktime">
+            <TextView
+                android:id="@+id/tv_label_trackarea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:text="Track Area"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true" />
+
+            <TextView
+                android:id="@+id/tv_areavalue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_weight="0.5"
+                android:layout_marginLeft="0dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/ll_trackarea">
+            <Button
+                android:id="@+id/btnPicture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@drawable/layout_buttons"
+                android:minHeight="10dp"
+                android:text="Show Pictures"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btnVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/layout_buttons"
+                android:minHeight="10dp"
+                android:text="Show Videos"
+                android:textColor="#000000"
+                android:textSize="14sp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

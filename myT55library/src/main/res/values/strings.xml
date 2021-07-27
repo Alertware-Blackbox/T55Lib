@@ -1,0 +1,270 @@
+<resources>
+    <string name="app_name">T55 Lib</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hello">Hello World, calculator!</string>
+    <string name="speech_prompt">Say something&#8230;</string>
+    <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
+
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="service_name">GPSLoggerService</string>
+    <string name="local_service_started">GPSLoggerService is running</string>
+    <string name="local_service_stopped">GPSLoggerService has stopped</string>
+    <string name="Export">Export KML to SD Card</string>
+    <string name="Description">This App will be useful to any people.It can be used as scientific or general calculator.</string>
+    <string name="start_new">New</string>
+    <string name="brush">Brush</string>
+    <string name="erase">Erase</string>
+    <string name="save">Save</string>
+    <string name="paint">Paint</string>
+    <string name="sml">Small</string>
+    <string name="med">Medium</string>
+    <string name="lrg">Large</string>
+    <string name="pref_data_poi_distance">poi_distance</string>
+
+    <color name="a">#FF4500</color>
+    <string name="set_location">Set location</string>
+    <string name="pick_date">Pick date</string>
+    <string name="today">Today</string>
+    <string-array name="settings_menu">
+        <item >Unit Settings</item>
+        <item>Default Datum Format</item>
+        <item>Favourite Datum Formats</item>
+        <item>Minimum Accuracy</item>
+        <item>Minimum Distance</item>
+        <item >Location printing style on photograph</item>
+        <item >Online Map Mode</item>
+        <item >Change Secret Number</item>
+        <item >Clear Project Data</item>
+        <item >Delete Project</item>
+        <item >Application Help</item>
+        <item >Online Bluetooth Gps</item>
+        <item >Paired Device</item>
+        <item>About</item>
+    </string-array>
+
+    <string-array name="settings_menu_subheader">
+        <item >Change Units</item>
+        <item>WP 84</item>
+        <item>Five favourite datum formats</item>
+        <item>Minimum accuracy value required throughout the application</item>
+        <item>Minimum distance between two locations for location change</item>
+        <item >DD.ddd°</item>
+        <item> Online map mode requires internet connection</item>
+        <item >Change periodically for more safety</item>
+        <item >Clear old data/erroneus data from existing project</item>
+        <item >Delete un-used project for better performance of storage space</item>
+        <item >Application help manual to start automatically in every module</item>
+        <item > Online Bluetooth Gps</item>
+
+        <item >Paired Device</item>
+        <item>SXgeo Advance</item>
+    </string-array>
+
+    <string-array name="unitchange_menu">
+        <item >Location Formats</item>
+        <item >Distance Unit</item>
+        <item >Area Unit</item>
+        <item >Speed Unit</item>
+    </string-array>
+
+    <string-array name="datum_menu">
+        <item >Delete</item>
+    </string-array>
+
+    <string-array name="minimum_accuracy">
+        <item >5 Meters</item>
+        <item >10 Meters</item>
+        <item >15 Meters</item>
+        <item >20 Meters</item>
+        <item >Any Value</item>
+    </string-array>
+    <string-array name="minimum_distance">
+        <item >10 Meters</item>
+        <item >15 Meters</item>
+        <item >20 Meters</item>
+        <item >25 Meters</item>
+    </string-array>
+
+    <string-array name="unitchange_menu_subheader">
+        <item >DD.ddd°</item>
+        <item >Meter</item>
+        <item >Hector</item>
+        <item >Mtr/Sec</item>
+    </string-array>
+
+    <string-array name="datumformats">
+        <item >Adindan</item>
+        <item >Afgooye</item>
+        <item >Ain el Abd 1970</item>
+        <item >Anna 1 Astro 1965</item>
+        <item >Arc 1950</item>
+        <item >Arc 1960</item>
+        <item >Ascension Island `58</item>
+        <item >Astro B4 Sorol Atoll</item>
+        <item >Astro Beacon "E"</item>
+        <item >Astro DOS 71/4</item>
+        <item >Astronomic Stn `52</item>
+        <item >Australian Geod `66</item>
+        <item >Australian Geod `84</item>
+        <item >Bellevue (IGN)</item>
+        <item >Bermuda 1957</item>
+        <item >Bogota Observatory</item>
+        <item >Campo Inchauspe</item>
+        <item >Canton Astro 1966</item>
+        <item >Cape</item>
+        <item >Cape Canaveral</item>
+        <item >Carthage</item>
+        <item >CH-1903</item>
+        <item >Chatham 1971</item>
+        <item >Chua Astro</item>
+        <item >Corrego Alegre</item>
+        <item >Djakarta (Batavia)</item>
+        <item >DOS 1968</item>
+        <item >Easter Island 1967</item>
+        <item >European 1950</item>
+        <item >European 1979</item>
+        <item >Finland Hayford</item>
+        <item >Gandajika Base</item>
+        <item >Geodetic Datum `49</item>
+        <item >Guam 1963</item>
+        <item >GUX 1 Astro</item>
+        <item >Hjorsey 1955</item>
+        <item >Hong Kong 1963</item>
+        <item >Indian Bangladesh</item>
+        <item >Indian Thailand</item>
+        <item >Ireland 1965</item>
+        <item >ISTS 073 Astro `69</item>
+        <item >Johnston Island</item>
+        <item >Kandawala</item>
+        <item >Kerguelen Island</item>
+        <item >Kertau 1948</item>
+        <item >L.C. 5 Astro</item>
+        <item >Liberia 1964</item>
+        <item >Luzon Mindanao</item>
+        <item >Luzon Philippines</item>
+        <item >Mahe 1971</item>
+        <item >Marco Astro</item>
+        <item >Massawa</item>
+        <item >Merchich</item>
+        <item >Midway Astro 1961</item>
+        <item >Minna</item>
+        <item >NAD27 Alaska</item>
+        <item >NAD27 Bahamas</item>
+        <item >NAD27 Canada</item>
+        <item >NAD27 Canal Zone</item>
+        <item >NAD27 Caribbean</item>
+        <item >NAD27 Central</item>
+        <item >NAD27 CONUS</item>
+        <item >NAD27 Cuba</item>
+        <item >NAD27 Greenland</item>
+        <item >NAD27 Mexico</item>
+        <item >NAD27 San Salvador</item>
+        <item >NAD83</item>
+        <item >Nahrwn Masirah Ilnd</item>
+        <item >Nahrwn Saudi Arbia</item>
+        <item >Nahrwn United Arab</item>
+        <item >Naparima BWI</item>
+        <item >Observatorio 1966</item>
+        <item >Old Egyptian</item>
+        <item >Old Hawaiian</item>
+        <item >Oman</item>
+        <item >Ord Srvy Grt Britn</item>
+        <item >Pico De Las Nieves</item>
+        <item >Pitcairn Astro 1967</item>
+        <item >Prov So Amrican `56</item>
+        <item >Prov So Chilean `63</item>
+        <item >Puerto Rico</item>
+        <item >Qatar National</item>
+        <item >Qornoq</item>
+        <item >Reunion</item>
+        <item >Rome 1940</item>
+        <item >RT 90</item>
+        <item >Santo (DOS)</item>
+        <item >Sao Braz</item>
+        <item >Sapper Hill 1943</item>
+        <item >Schwarzeck</item>
+        <item >South American `69</item>
+        <item >South Asia</item>
+        <item >Southeast Base</item>
+        <item >Southwest Base</item>
+        <item >Timbalai 1948</item>
+        <item >Tokyo</item>
+        <item >Tristan Astro 1968</item>
+        <item >Viti Levu 1916</item>
+        <item >Wake-Eniwetok `60</item>
+        <item >WGS 72</item>
+        <item >WGS 84</item>
+        <item >Zanderij</item>
+        <item >Uli</item>
+        <item >Uli2</item>
+        <item >Coal Grid</item>
+    </string-array>
+
+    <string-array name="settings_loc_format">
+        <item >DD.ddd</item>
+        <item >DD°MM.mmm’</item>
+        <item >DD°MM’SS.ss”</item>
+        <item >UTM</item>
+    </string-array>
+
+    <string-array name="unitchange_dist_format">
+        <item >Meter</item>
+        <item >Kilometer</item>
+    </string-array>
+
+    <string-array name="unitchange_area_format">
+        <item >Hectare</item>
+        <item >Acre</item>
+    </string-array>
+
+    <string-array name="unitchange_speed_format">
+        <item >Mtr/Sec</item>
+        <item >Km/hr</item>
+    </string-array>
+
+    <string name="pref_key">SxGeoAdvance</string>
+    <string name="pref_data_location_format">location_format</string>
+    <string name="pref_data_speed_format">speed_format</string>
+    <string name="pref_data_distance_format">distance_format</string>
+    <string name="pref_data_area_format">area_format</string>
+    <string name="pref_data_location_print_format">location_print_format</string>
+    <string name="pref_data_datum_format">datum_format</string>
+    <string name="pref_data_lat_val">lat_val</string>
+    <string name="pref_data_lng_val">lng_val</string>
+    <string name="pref_data_nav_type">nav_type</string>
+    <string name="pref_data_imei1">app_imei1</string>
+    <string name="pref_data_min_accuracy">min_accuracy</string>
+    <string name="pref_data_min_distance">min_distance</string>
+    <string name="pref_data_help_flag">helpflag</string>
+    <string name="pref_online_mode">mode</string>
+    <string name="pref_data_licence_key">app_licenced_key</string>
+    <string name="activation_url">licencesxtreo/index.php/taskservice/activationLicenseMobile/imei1/%1$s/imei2/%2$s/activationCode/%3$s/customerCode/%4$s
+    </string>
+
+    <string name="deactivation_url">licencesxtreo/index.php/taskservice/deactivationLicenseMobile/imei1/%1$s/activationCode/%2$s
+    </string>
+
+    <string name="secret_number_user_text">The number will be required to authenticate users for data removal. You can change this number later through "Settings".</string>
+    <string name="pref_data_if_licenced">app_is_licenced</string>
+    <string name="pref_data_cust_code">app_cust_code</string>
+    <string name="pref_data_secret_num">app_secret_num</string>
+    <string name="pref_data_db_path">db_path</string>
+    <string name="pref_map_path">db_path</string>
+    <string name="pref_data_db_loc_type">db_loc_type</string>
+    <string name="pref_data_map_licence_key">map_licenced_key</string>
+    <string name="id_1">10</string>
+    <string name="id_2">20</string>
+    <string name="id_3">31</string>
+    <string-array name="spinner_items">
+        <item>Distance</item>
+        <item>Bearing</item>
+        <item>Heading</item>
+        <item>Time To Go</item>
+        <item>ETA</item>
+        <item>Altitude</item>
+    </string-array>
+
+    <string name="title_activity_about">AboutActivity</string>
+</resources>

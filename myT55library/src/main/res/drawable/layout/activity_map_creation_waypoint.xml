@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <Spinner
+        android:id="@+id/spnrProjection"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.0"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/mapview"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tblR" />
+
+
+    <ImageButton
+        android:id="@+id/btn_measure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/measure"
+        android:onClick="onClick"
+        android:visibility="gone" />
+
+    <ImageButton
+        android:id="@+id/btn_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/ic_cross"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_gps"
+        android:visibility="gone"/>
+
+
+    <Spinner
+        android:id="@+id/spnrRoute"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.0"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <ImageView
+        android:id="@+id/centrePlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/centre_plus"
+        android:visibility="gone"/>
+
+    <ListView
+        android:id="@+id/listMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="220dp"
+        android:layout_margin="50sp"
+        android:background="@drawable/layout_background_list"
+        android:cacheColorHint="#00000000"
+        android:choiceMode="singleChoice"
+        android:divider="#b5b5b5"
+        android:dividerHeight="1dp"
+        android:padding="15dp"
+        android:scrollbars="vertical"
+        android:visibility="gone">
+
+    </ListView>
+
+</RelativeLayout>

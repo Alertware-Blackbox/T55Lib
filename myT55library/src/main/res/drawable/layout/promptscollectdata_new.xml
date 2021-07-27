@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<LinearLayout
+    android:id="@+id/layout_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="10dp" 
+    android:background="@drawable/layout_background_layer_new"
+    android:fitsSystemWindows="true">
+    
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp" 
+            >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:text="Project Name"
+                android:textColor="@android:color/black"
+                android:layout_weight="0.6"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_proj_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.4"
+                android:gravity="left"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+        </TableRow>
+        
+
+        
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/tv_label_lat"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+               android:gravity="left"               
+                android:text="Latitude"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_lat"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+               android:layout_weight="0.4"
+               android:gravity="left"
+                android:textStyle="bold" 
+                android:textColor="@android:color/black"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/tv_label_lng"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Longitude"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" 
+                android:layout_weight="0.6"/>
+
+            <TextView
+                android:id="@+id/tv_long"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                 android:gravity="left"
+                android:layout_weight="0.4"
+                android:textStyle="bold" 
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+             android:id="@+id/ll_zone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+			android:visibility="gone">
+
+            <TextView
+               
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Zone"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" 
+                android:layout_weight="0.6"/>
+
+            <TextView
+                android:id="@+id/tv_zone_val"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                 android:gravity="left"
+                android:layout_weight="0.4"
+                android:textStyle="bold" 
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|left"
+                android:layout_gravity="top|left"
+                
+                android:text="Select Form"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" 
+                 android:layout_weight="0.6"/>
+
+
+        </LinearLayout> 
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp" >
+
+
+            <Spinner
+                android:id="@+id/spinSelectForm"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.4"
+                android:background="@drawable/spinner_bg" />
+        </LinearLayout>
+ 
+   
+ 
+</LinearLayout>
+</ScrollView>

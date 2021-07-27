@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:scrollbars="vertical" 
+    > 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" 
+     android:background="@drawable/layout_background_layer_new">
+
+       <TextView
+            android:id="@+id/txtHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Dynamic Form"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:shadowColor="#000000"
+        android:shadowRadius="0"
+        android:shadowDy="3"
+        android:textAppearance="?android:attr/textAppearanceMedium" 
+         android:background="@drawable/layout_title_bar_new"/>
+       
+        <LinearLayout
+            android:id="@+id/llMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp" 
+            android:orientation="vertical">
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:gravity="bottom|center" 
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="0.01"
+            android:orientation="vertical" >
+            
+         <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+           <!--<Button-->
+               <!--android:id="@+id/btnPicture"-->
+               <!--android:layout_width="match_parent"-->
+               <!--android:layout_height="wrap_content"-->
+               <!--android:layout_weight="0.5"-->
+               <!--android:background="@drawable/layout_buttons"-->
+               <!--android:minHeight="10dp"-->
+               <!--android:text="Take Picture"-->
+               <!--android:visibility="gone"-->
+               <!--android:textColor="#000000"-->
+                <!--android:textSize="14sp" />-->
+
+           <!--<Button-->
+               <!--android:id="@+id/btnVideo"-->
+               <!--android:layout_width="match_parent"-->
+               <!--android:layout_height="wrap_content"-->
+               <!--android:layout_marginLeft="5dp"-->
+               <!--android:layout_weight="0.5"-->
+               <!--android:background="@drawable/layout_buttons"-->
+               <!--android:minHeight="10dp"-->
+               <!--android:text="Take Video"-->
+               <!--android:visibility="gone"-->
+               <!--android:textColor="#000000" -->
+                <!--android:textSize="14sp"/> -->
+
+        </LinearLayout>
+
+           <Button
+               android:id="@+id/btnSave"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@drawable/layout_buttons"
+               android:minHeight="10dp"
+               android:layout_marginTop="5dp"
+               android:text="Save"
+               android:textColor="#000000"
+                android:textSize="14sp" />
+           </LinearLayout>
+
+</LinearLayout>
+
+</ScrollView>

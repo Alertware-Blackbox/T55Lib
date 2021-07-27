@@ -1,0 +1,1029 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:scrollbars="vertical" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" 
+        android:background="@drawable/layout_background_layer_new">
+
+        <TextView
+            android:id="@+id/txtHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Track"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:shadowColor="#000000"
+            android:shadowRadius="0"
+            android:shadowDy="3"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="@drawable/layout_title_bar_new"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/trackname"
+            android:layout_below="@+id/txtHeader"
+            android:orientation="vertical" >
+
+             <TextView
+                 android:id="@+id/textView2"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="10dp"
+                 android:layout_weight="0.91"
+                 android:text=" Track Name" 
+                 android:textColor="@color/black"
+                 android:textStyle="bold"/>
+
+             <EditText
+                 android:id="@+id/edTrackName"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:textColor="@color/black"
+                 android:ems="10" 
+                 android:singleLine="true">
+             </EditText>
+        </LinearLayout>
+             
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/trackradio"
+                android:layout_below="@+id/trackname"
+                android:layout_marginTop="10dp" > 
+                
+                 <RadioGroup
+                    android:id="@+id/radioCustom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioBtnManual"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.33"
+                    android:textSize="10sp"
+                    android:textColor="@color/black"
+                    android:text="Manual" />
+
+                <RadioButton
+                    android:id="@+id/radioBtnAuto"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.33"
+                    android:textSize="10sp"
+                    android:textColor="@color/black"
+                    android:text="Auto(Time)" />
+                
+                <RadioButton
+                    android:id="@+id/radioBtnAutoDist"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.33"
+                    android:textSize="10sp"
+                    android:textColor="@color/black"
+                    android:text="Auto(Dist)" />
+                </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/llAuto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/trackradio"
+            android:orientation="vertical" >
+
+             <TextView
+                 android:id="@+id/textView3"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="0.91"
+                 android:text="Time Duration"
+                 android:textColor="@color/black"
+                 android:textStyle="bold" />
+           
+             <Spinner
+                android:id="@+id/spinTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/spinner_bg" />
+           
+          
+           
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+           
+                android:orientation="horizontal" >
+
+           <Button
+               android:id="@+id/btnTrackStart"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="10dp"
+               android:layout_weight="0.5"
+               android:background="@drawable/layout_buttons"
+               android:text="Start"
+               android:textColor="#000000"/>
+             <Button
+               android:id="@+id/btnTrackStop"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="10dp"
+               android:layout_weight="0.5"
+               android:background="@drawable/layout_buttons"
+               android:text="Stop"
+               android:textColor="#000000" />
+           
+        </LinearLayout>
+    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/llAutoDist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/llAuto"
+            android:visibility="visible"
+            android:orientation="vertical" >
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="0.91"
+                 android:text="Distance"
+                 android:textColor="@color/black"
+                 android:textStyle="bold" />
+           
+           <Spinner
+               android:id="@+id/spinDist"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="20dp"
+               android:layout_marginRight="20dp"
+               android:layout_marginTop="10dp"
+               android:layout_weight="1"
+               android:background="@drawable/spinner_bg" />
+           
+          
+           
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+           
+            android:orientation="horizontal" >
+
+           <Button
+               android:id="@+id/btnTrackStartDist"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="10dp"
+               android:layout_weight="0.5"
+               android:background="@drawable/layout_buttons"
+               android:text="Start"
+               android:textColor="#000000"/>
+             <Button
+               android:id="@+id/btnTrackStopDist"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="10dp"
+               android:layout_weight="0.5"
+               android:background="@drawable/layout_buttons"
+               android:text="Stop"
+               android:textColor="#000000" />
+           
+        </LinearLayout>
+  </LinearLayout>
+  
+  
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/llAutoDist"
+            android:id="@+id/trackno"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Track Point No"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+           
+           <TextView
+               android:id="@+id/TrackPoint"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:text=""
+               android:layout_weight="0.4"
+               android:layout_gravity="left"
+               android:gravity="center"
+               android:textColor="@color/black"
+             />
+          
+            
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/trackno"
+            android:id="@+id/datum"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_datum"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Datum Format"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/Datum_format"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/datum"
+            android:id="@+id/lat"
+            android:orientation="horizontal" >
+           <TextView
+               	android:id="@+id/tv_label_lat"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Latitude"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+           <TextView
+               android:id="@+id/TrackLat"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:text="" 
+               android:layout_gravity="left"
+               android:layout_weight="0.4"
+               android:gravity="center"
+              android:textColor="@color/black"/>
+           
+          
+            
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/lat"
+            android:id="@+id/lng"
+            android:orientation="horizontal" >
+           <TextView
+               android:id="@+id/tv_label_lng"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:layout_weight="0.6"
+               android:text="Longitude"
+               android:textColor="@color/black"
+               android:textStyle="bold"/>
+
+           <TextView
+               android:id="@+id/TrackLon"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:text=""
+               android:layout_gravity="right"
+               android:gravity="center"
+               android:layout_weight="0.4"
+               android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_zone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/lng"
+			android:visibility="gone">
+
+            <TextView
+               
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Zone"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" 
+                android:layout_weight="0.6"/>
+
+            <TextView
+                android:id="@+id/tv_zone_val"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="right"
+               	android:gravity="center"
+                android:layout_weight="0.4"
+                android:textStyle="normal" 
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/ll_zone"
+            android:id="@+id/dist"
+            android:orientation="horizontal" >
+           
+            <TextView
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="0.6"
+                 android:text="Distance" 
+                 android:textColor="@color/black"
+                 android:textStyle="bold"/>
+
+           <TextView
+               android:id="@+id/txtDistance"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:text=""
+               android:layout_gravity="right"
+               android:gravity="center"
+               android:layout_weight="0.4"
+               android:textColor="@color/black"/>
+           
+          
+            
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/dist"
+            android:id="@+id/speed"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal" >
+           
+            <TextView
+                 android:id="@+id/textView4"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="0.6"
+                 android:text="Speed" 
+                 android:textColor="@color/black"
+                 android:textStyle="bold"
+                 />
+
+           <TextView
+               android:id="@+id/txtSpeed"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:text=""
+               android:layout_gravity="right"
+               android:gravity="center"
+               android:layout_weight="0.4"
+               android:textColor="@color/black"/>
+           
+          
+            
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_pdop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/speed"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_pdop"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.63"
+                android:text="PDOP"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/TrackPDOP"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="left"
+                android:layout_weight="0.37"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/ll_pdop"
+            android:orientation="horizontal"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/tv_label_area"
+                android:layout_width="92dp"
+                android:layout_height="wrap_content"
+                android:text="Area"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_weight="0.5" />
+
+            <TextView
+                android:id="@+id/TrackArea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:text=""
+                android:layout_gravity="right"
+                android:layout_weight="0.5"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/picture"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/ll_area"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="0.01" >
+
+           <Button
+               android:id="@+id/btnPicture"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_weight="0.5"
+               android:background="@drawable/layout_buttons"
+               android:minHeight="10dp"
+               android:text="Take Picture"
+               android:textColor="#000000"
+               android:textSize="14sp" />
+
+           <Button
+               android:id="@+id/btnVideo"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="5dp"
+               android:layout_weight="0.5"
+               android:background="@drawable/layout_buttons"
+               android:minHeight="10dp"
+               android:text="Take Video"
+               android:textColor="#000000" 
+               android:textSize="14sp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/llmapview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/picture"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btnViewMap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/layout_buttons"
+                android:text="View Map"
+                android:textColor="#000000"
+                />
+
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/llManual"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/llmapview"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btnPick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/layout_buttons"
+                android:text="Pick"
+                android:textColor="#000000" />
+            <Button
+                android:id="@+id/btnDone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/layout_buttons"
+                android:text="Done"
+                android:textColor="#000000" />
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/helplayout"
+            android:background="#88666666">
+            <TextView
+                android:id="@+id/txtHeader1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Create Track"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"
+                android:shadowColor="#000000"
+                android:shadowRadius="0"
+                android:shadowDy="3"
+                android:visibility="invisible"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:background="@drawable/layout_title_bar_new"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/trackname1"
+                android:visibility="invisible"
+                android:layout_below="@+id/txtHeader1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="0.91"
+                    android:text=" Track Name"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <EditText
+                    android:id="@+id/edTrackName1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:ems="10"
+                    android:singleLine="true">
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/trackradio1"
+                android:visibility="invisible"
+                android:layout_below="@+id/trackname1"
+                android:layout_marginTop="10dp" >
+
+                <RadioGroup
+                    android:id="@+id/radioCustom1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioBtnManual1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.33"
+                        android:textSize="10sp"
+                        android:textColor="@color/black"
+                        android:text="Manual" />
+
+                    <RadioButton
+                        android:id="@+id/radioBtnAuto1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.33"
+                        android:textSize="10sp"
+                        android:textColor="@color/black"
+                        android:text="Auto(Time)" />
+
+                    <RadioButton
+                        android:id="@+id/radioBtnAutoDist1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.33"
+                        android:textSize="10sp"
+                        android:textColor="@color/black"
+                        android:text="Auto(Dist)" />
+                </RadioGroup>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/llAuto1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:visibility="invisible"
+                android:layout_below="@+id/trackradio1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.91"
+                    android:text="Time Duration"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+
+
+                <Spinner
+                    android:id="@+id/spinTime1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/spinner_bg" />
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/btnTrackStart1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/layout_buttons"
+                        android:text="Start"
+                        android:textColor="#000000"/>
+                    <Button
+                        android:id="@+id/btnTrackStop1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/layout_buttons"
+                        android:text="Stop"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/left_bend2"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="150dp"
+                android:id="@+id/imageView1"
+                android:layout_centerHorizontal="true" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/down"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="100dp"
+                android:id="@+id/imageView2"
+                android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User can give a name for the track \nand select track mode from manual, \nauto time or auto distance"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/textView1"
+                android:layout_marginTop="250dp"
+                android:textColor="@color/white"
+                android:layout_centerHorizontal="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User view the track point number \nand current position details, \naand also take track pictures and videos."
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/textView11"
+                android:layout_marginTop="50dp"
+                android:textColor="@color/white"
+                android:layout_centerHorizontal="true"/>
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/exit"
+                android:src="@drawable/exit3"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true" />
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:id="@+id/next"
+                android:src="@drawable/next1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" />
+            <LinearLayout
+                android:id="@+id/llAutoDist1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+
+                android:layout_below="@+id/llAuto1"
+                android:visibility="invisible"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.91"
+                    android:text="Distance"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spinDist1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/spinner_bg" />
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/btnTrackStartDist1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/layout_buttons"
+                        android:text="Start"
+                        android:textColor="#000000"/>
+                    <Button
+                        android:id="@+id/btnTrackStopDist1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/layout_buttons"
+                        android:text="Stop"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/llAutoDist1"
+                android:id="@+id/trackno1"
+                android:visibility="invisible"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Track Point No"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/TrackPoint1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_weight="0.4"
+                    android:layout_gravity="left"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/trackno1"
+                android:id="@+id/datum1"
+                android:visibility="invisible"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/tv_label_datum1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Datum Format"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/Datum_format1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/datum1"
+                android:id="@+id/lat1"
+                android:visibility="invisible"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/tv_label_lat1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Latitude"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/TrackLat1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="left"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/lat1"
+                android:id="@+id/lng1"
+                android:visibility="invisible"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/tv_label_lng1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Longitude"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/TrackLon1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="right"
+                    android:gravity="center"
+                    android:layout_weight="0.4"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_zone1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/lng1"
+                android:visibility="gone">
+
+                <TextView
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Zone"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:layout_weight="0.6"/>
+
+                <TextView
+                    android:id="@+id/tv_zone_val1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="right"
+                    android:gravity="center"
+                    android:layout_weight="0.4"
+                    android:textStyle="normal"
+                    android:textColor="@android:color/black"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>

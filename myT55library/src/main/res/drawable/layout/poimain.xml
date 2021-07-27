@@ -1,0 +1,159 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/layout_background_layer_new"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/RelativeLayout1"
+        android:layout_gravity="center_vertical">
+        <Button
+                android:id="@+id/btncreatepoi"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/button_background_main_new"
+                android:drawableTop="@drawable/poi_1"
+                android:gravity="center"
+                android:onClick="buttonClick"
+                android:paddingTop="15dp"
+                android:shadowColor="#000000"
+                android:shadowDy="0"
+                android:shadowRadius="0"
+                android:text="Create POI"
+                android:textStyle="normal"
+                android:textColor="@color/black_dashboard"
+                android:textSize="12sp" />
+
+
+            <Button
+                android:id="@+id/btnmanagepoi"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/button_background_main_new"
+                android:drawableTop="@drawable/ic_waypoint_manager"
+                android:gravity="center"
+                android:onClick="buttonClick"
+                android:layout_below="@id/btncreatepoi"
+                android:paddingTop="15dp"
+                android:shadowColor="#000000"
+                android:shadowDy="2"
+                android:shadowRadius="0"
+                android:text="POI Manager"
+                android:textColor="@color/black_dashboard"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+
+
+            <!--  -->
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="391dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+
+        android:background="@drawable/layout_title_bar_new"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="Point Of Interest"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_navigator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="20dp"
+            android:visibility="gone"
+            android:src="@drawable/navigator" />
+
+        <!--<Button
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/ic_dialog_info"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />-->
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/helplayout"
+        android:background="#88666666">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/right_bend"
+            android:id="@+id/poimanager"
+            android:layout_marginLeft="42dp"
+            android:layout_marginTop="116dp"
+            android:layout_below="@+id/exit"
+            android:layout_alignParentLeft="true" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/left_bend2"
+            android:id="@+id/poicreate"
+            android:layout_alignBottom="@+id/poimanager"
+            android:layout_toLeftOf="@+id/exit" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Create new \npoint of interest"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/poicreate"
+            android:layout_alignParentRight="true"
+            android:id="@+id/textView29" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Manage already \ncreated \npoint of interests"
+            android:layout_marginLeft="10dp"
+            android:layout_above="@+id/poicreate"
+            android:layout_alignParentLeft="true" />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/exit"
+            android:src="@drawable/exit3"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
+<!-- </ScrollView> -->

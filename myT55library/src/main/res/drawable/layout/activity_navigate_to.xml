@@ -1,0 +1,1225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:scrollbars="vertical" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/layout_background_layer_new">
+        <TextView
+            android:id="@+id/txtHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Navigation"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:shadowColor="#000000"
+            android:shadowRadius="0"
+            android:shadowDy="3"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="@drawable/layout_title_bar_new"/>
+        <Spinner
+            android:id="@+id/spnrData"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_weight="0.0"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/currloc"
+            android:layout_below="@+id/txtHeader"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_subheading"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Current Location"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="15dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/currlat"
+            android:layout_below="@+id/currloc"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_lat"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Latitude"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:id="@+id/TrackLat"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="left"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/currlon"
+            android:layout_below="@+id/currlat"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_lng"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Longitude"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/TrackLon"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:layout_weight="0.4"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/seldatum"
+            android:layout_below="@+id/currlon"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_datum"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Datum"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_datum"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:layout_weight="0.4"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_zone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/seldatum"
+            android:visibility="gone">
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Zone"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_weight="0.6"/>
+
+            <TextView
+                android:id="@+id/tv_zone_val"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:gravity="left"
+                android:layout_weight="0.4"
+                android:text=""
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/ll_zone"
+            android:id="@+id/destdet"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_destinations"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Destination Details"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="15dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/destdet"
+            android:id="@+id/navto"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_Label_navigateto"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Navigate To"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:id="@+id/tv_navigateto"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="left"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_project"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/navto"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_project"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Project"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:id="@+id/tv_project"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="left"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_pointdetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/ll_project"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_tracknumber"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Point ID"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:id="@+id/tv_tracknumber"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="left"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/ll_pointdetails"
+            android:id="@+id/destlat"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_destpointlat"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Latitude"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:id="@+id/tv_pointlat"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="left"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/destlat"
+            android:id="@+id/destlon"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_destpointlong"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Longitude"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:id="@+id/tv_pointlong"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="left"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/destlon"
+            android:id="@+id/destdatum"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_datumdest"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Datum"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:id="@+id/tv_datumdest"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_destzone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/destdatum"
+            android:visibility="gone">
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Zone"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_weight="0.6"/>
+
+            <TextView
+                android:id="@+id/tv_destzone_val"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:gravity="left"
+                android:layout_weight="0.4"
+                android:text=""
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/ll_destzone"
+            android:id="@+id/navdet"
+            android:visibility="gone"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_navigation"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Navigation Details"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="15dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/navdet"
+            android:id="@+id/navdist"
+            android:visibility="gone"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_navdist"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Distance"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:id="@+id/tv_navdist"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="left"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/navdist"
+            android:id="@+id/navbear"
+            android:visibility="gone"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_bearing"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Bearing"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:id="@+id/tv_bearing"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="left"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/navbear"
+            android:id="@+id/navdiv"
+            android:visibility="gone"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_deviation"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Deviation"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:id="@+id/tv_deviation"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="left"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/navdiv"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="0.01" >
+
+            <Button
+                android:id="@+id/btnDiagram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@drawable/layout_buttons"
+                android:minHeight="10dp"
+                android:text="Show in Diagram"
+                android:layout_marginBottom="10dp"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/btnMap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/layout_buttons"
+                android:minHeight="10dp"
+                android:text="Show in Map"
+                android:layout_marginBottom="10dp"
+                android:textColor="#000000"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#88666666"
+            android:id="@+id/helplayout">
+            <TextView
+                android:id="@+id/txtHeader1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Navigation"
+                android:gravity="center"
+                android:visibility="invisible"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"
+                android:shadowColor="#000000"
+                android:shadowRadius="0"
+                android:shadowDy="3"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:background="@drawable/layout_title_bar_new"/>
+            <Spinner
+                android:id="@+id/spnrData1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:paddingLeft="10dp"
+                android:visibility="invisible"
+                android:paddingRight="10dp"
+                android:layout_weight="0.0"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:id="@+id/currloc1"
+                android:layout_below="@+id/txtHeader1"
+                android:visibility="invisible"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/tv_label_subheading1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Current Location"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="15dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:id="@+id/currlat1"
+                android:layout_below="@+id/currloc1"
+                android:visibility="invisible"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/tv_label_lat1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Latitude"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/TrackLat1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="left"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:id="@+id/currlon1"
+                android:visibility="invisible"
+                android:layout_below="@+id/currlat1"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/tv_label_lng1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Longitude"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/TrackLon1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="right"
+                    android:gravity="center"
+                    android:layout_weight="0.4"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:id="@+id/seldatum1"
+                android:layout_below="@+id/currlon1"
+                android:visibility="invisible"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/tv_label_datum1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Datum"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tv_datum1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="center"
+                    android:layout_weight="0.4"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_zone1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/seldatum1"
+                android:visibility="gone">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Zone"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:layout_weight="0.6"/>
+
+                <TextView
+                    android:id="@+id/tv_zone_val1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:gravity="left"
+                    android:layout_weight="0.4"
+                    android:text=""
+                    android:textColor="@android:color/black"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/ll_zone1"
+                android:visibility="invisible"
+                android:id="@+id/destdet1"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/tv_label_destinations1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Destination Details"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="15dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/destdet1"
+                android:visibility="invisible"
+                android:id="@+id/navto1"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/tv_Label_navigateto1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Navigate To"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/tv_navigateto1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="left"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_project1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:visibility="invisible"
+                android:layout_below="@+id/navto1"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/tv_label_project1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Project"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/tv_project1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="left"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_pointdetails1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/ll_project1"
+                android:visibility="invisible"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/tv_label_tracknumber1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Point ID"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/tv_tracknumber1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="left"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:visibility="invisible"
+                android:layout_below="@+id/ll_pointdetails1"
+                android:id="@+id/destlat1"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/tv_label_destpointlat1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Latitude"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/tv_pointlat1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="left"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:visibility="invisible"
+                android:layout_below="@+id/destlat1"
+                android:id="@+id/destlon1"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/tv_label_destpointlong1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Longitude"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/tv_pointlong1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="left"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/destlon1"
+                android:visibility="invisible"
+                android:id="@+id/destdatum1"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/tv_label_datumdest1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Datum"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/tv_datumdest1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_destzone1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/destdatum1"
+                android:visibility="gone">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Zone"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:layout_weight="0.6"/>
+
+                <TextView
+                    android:id="@+id/tv_destzone_val1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:gravity="left"
+                    android:layout_weight="0.4"
+                    android:text=""
+                    android:textColor="@android:color/black"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:visibility="gone"
+                android:layout_below="@+id/ll_destzone1"
+                android:id="@+id/navdet1"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/tv_label_navigation1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Navigation Details"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:textSize="15dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/navdet1"
+                android:visibility="invisible"
+                android:id="@+id/navdist1"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/tv_label_navdist1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Distance"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/tv_navdist1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="left"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/navdist1"
+                android:visibility="invisible"
+                android:id="@+id/navbear1"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/tv_label_bearing1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Bearing"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/tv_bearing1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="left"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/navbear1"
+                android:id="@+id/navdiv1"
+                android:visibility="invisible"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/tv_label_deviation1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Deviation"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/tv_deviation1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="left"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/navdiv1"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="5dp"
+                android:visibility="invisible"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.01"
+                android:id="@+id/linearLayout13">
+
+                <Button
+                    android:id="@+id/btnDiagram1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/layout_buttons"
+                    android:minHeight="10dp"
+                    android:text="Show in Diagram"
+                    android:textColor="#000000"
+                    android:textSize="14sp"/>
+
+                <Button
+                    android:id="@+id/btnMap1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/layout_buttons"
+                    android:minHeight="10dp"
+                    android:text="Show in Map"
+                    android:textColor="#000000"
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/left_bend2"
+                android:id="@+id/imageView26"
+                android:layout_below="@+id/currlon1"
+                android:layout_toLeftOf="@+id/textView22" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current location details"
+                android:textColor="@color/white"
+                android:id="@+id/textView32"
+                android:layout_below="@+id/currlat1"
+                android:layout_toLeftOf="@+id/imageView30" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/left_bend2"
+                android:id="@+id/imageView27"
+                android:layout_below="@+id/ll_pointdetails1"
+                android:layout_toRightOf="@+id/imageView29" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Destination point details"
+                android:id="@+id/textView2"
+                android:textColor="@color/white"
+                android:layout_alignTop="@+id/ll_pointdetails1"
+                android:layout_toLeftOf="@+id/imageView30" />
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:id="@+id/imageViewnext"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/next1"
+                />
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:id="@+id/imageViewstop"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/exit3"
+                android:layout_alignParentRight="true"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/right_bend"
+                android:id="@+id/imageView28"
+                android:layout_alignTop="@+id/navdet1"
+                android:layout_alignLeft="@+id/textView23" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deviation from straight line \nbetween start and stop, \nbearing to destination and\n current distance from \ndestination is shown."
+                android:id="@+id/textView21"
+                android:textColor="@color/white"
+                android:layout_below="@+id/destlat1"
+                android:layout_toLeftOf="@+id/textView22" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/down"
+                android:id="@+id/imageView29"
+                android:layout_below="@+id/navdet1"
+                android:layout_alignRight="@+id/imageView28" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Live walk on map."
+                android:id="@+id/textView22"
+                android:textColor="@color/white"
+                android:layout_alignTop="@+id/textView23"
+                android:layout_alignRight="@+id/imageViewstop" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/down"
+                android:id="@+id/imageView30"
+                android:layout_alignTop="@+id/imageView29"
+                android:layout_toLeftOf="@+id/imageViewstop" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View navigation on compass."
+                android:id="@+id/textView23"
+                android:textColor="@color/white"
+                android:layout_above="@+id/imageView29"
+                android:layout_toRightOf="@+id/imageViewnext" />
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,224 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        tools:context="com.javacodegeeks.androidsurfaceviewexample.AndroidSurfaceviewExample" >
+
+<SurfaceView
+    android:id="@+id/surfaceView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1" />
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:background="#80000000"
+        android:id="@+id/linearLayout4"
+        android:layout_toRightOf="@+id/relativeLayout8"
+        android:layout_toLeftOf="@+id/relativeLayout7">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Locate the BOTTOM (on the ground) of the \r\ntarget in the cross-hairs and touch get Distance"
+            android:textSize="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tvhelp"
+            android:textColor="@color/blue"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/centre"
+        android:src="@drawable/crosshairsg"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#80000000"
+        android:id="@+id/relativeLayout6"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/refresh"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/restart"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentTop="true" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/editheight"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/settings"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/cameracapture" />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/cameracapture"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/camera"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#80000000"
+    android:layout_alignParentRight="true"
+    android:layout_below="@+id/relativeLayout6"
+    android:id="@+id/relativeLayout7"
+    android:layout_alignParentBottom="true">
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/capdistance"
+        android:id="@+id/showpic"
+        android:layout_above="@+id/textView8"
+        android:layout_marginBottom="5dp"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Distance(M)"
+        android:layout_above="@+id/distvalue"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:id="@+id/textView8"
+        android:layout_centerHorizontal="true"
+         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:id="@+id/distvalue"
+        android:layout_centerVertical="true"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/capdistance"
+        android:id="@+id/distcapture"
+        android:layout_below="@+id/distvalue"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Distance"
+        android:layout_marginTop="5dp"
+        android:id="@+id/capturetext"
+        android:textColor="@color/white"
+        android:layout_below="@+id/distcapture"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please point at the floor"
+        android:id="@+id/tvalert"
+        android:textSize="15dp"
+        android:textColor="@color/red"
+        android:layout_above="@+id/linearLayout4"
+        android:layout_centerHorizontal="true" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:id="@+id/relativeLayout8"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout6"
+        android:layout_alignBottom="@+id/linearLayout4">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/capdistance"
+            android:id="@+id/imgheight"
+            android:layout_marginBottom="5dp"
+            android:layout_above="@+id/tvheight"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/measureheight"
+            android:layout_marginTop="10dp"
+            android:id="@+id/imageView5"
+            android:layout_below="@+id/heightvalue"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Height (M)"
+            android:layout_above="@+id/heightvalue"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:id="@+id/tvheight"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:id="@+id/heightvalue"
+            android:text=""
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get Height"
+            android:layout_marginTop="5dp"
+            android:id="@+id/tvgetheight"
+            android:textColor="@color/white"
+            android:layout_below="@+id/imageView5"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
+
+
+</RelativeLayout>

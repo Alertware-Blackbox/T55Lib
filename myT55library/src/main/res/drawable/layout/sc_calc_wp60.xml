@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/layout_background_layer_new">
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/inputview1"
+            android:id="@+id/rlview">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MOD"
+                android:textSize="15sp"
+                android:layout_marginTop="30px"
+                android:id="@+id/tvoptr"
+                android:textColor="@color/black"
+                android:layout_below="@+id/Tvrad"
+                />
+
+            <TextView
+                android:id="@+id/txtInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:text="0."
+                android:gravity="right"
+                android:background="@drawable/inputview1"
+                android:textColor="@color/darkgreen"
+                android:layout_below="@+id/Tvrad"
+                android:layout_toRightOf="@+id/tvoptr"
+                android:layout_toLeftOf="@+id/tvexp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvexp"
+                android:text="ABC"
+                android:textSize="15sp"
+                android:textColor="@color/darkgreen"
+                android:gravity="right"
+                android:layout_alignBottom="@+id/tvoptr"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/tvoptr" />
+
+            <TextView
+                android:id="@+id/Tvshift"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:textSize="8sp"
+                android:gravity="right"
+                android:textColor="@color/black"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/txtInput"
+                android:text="SHIFT" />
+
+            <TextView
+                android:id="@+id/Tvhyp"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:textSize="8sp"
+                android:text="HYP"
+                android:gravity="right"
+                android:textColor="@color/black"
+                android:layout_alignTop="@+id/Tvshift"
+                android:layout_toRightOf="@+id/Tvshift" />
+
+            <TextView
+                android:id="@+id/Tvdeg"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:textSize="8sp"
+                android:text="DEG"
+                android:gravity="right"
+                android:textColor="@color/black"
+                android:layout_alignTop="@+id/Tvhyp"
+                android:layout_toRightOf="@+id/Tvhyp" />
+
+            <TextView
+                android:id="@+id/tvsci"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:textSize="8sp"
+                android:gravity="right"
+                android:text="SCI"
+                android:textColor="@color/black"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/tvfix" />
+
+            <TextView
+                android:id="@+id/tvfix"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:textSize="8sp"
+                android:gravity="right"
+                android:text="FIX"
+                android:textColor="@color/black"
+                android:layout_alignTop="@+id/Tvrad"
+                android:layout_toRightOf="@+id/Tvrad" />
+
+            <TextView
+                android:id="@+id/tveng"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:textSize="8sp"
+                android:text="ENG"
+                android:gravity="right"
+                android:textColor="@color/black"
+                android:layout_alignTop="@+id/tvsci"
+                android:layout_toRightOf="@+id/tvsci" />
+
+            <TextView
+                android:id="@+id/Tvrad"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:textSize="8sp"
+                android:gravity="right"
+                android:text="RAD"
+                android:textColor="@color/black"
+                android:layout_alignTop="@+id/Tvdeg"
+                android:layout_toRightOf="@+id/Tvdeg" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rltv1"
+            android:layout_alignRight="@+id/rlbutn1"
+            android:layout_below="@+id/rlview"
+            android:layout_alignLeft="@+id/rlbutn1">
+            <TextView
+                android:layout_width="40px"
+                android:layout_height="30px"
+                android:text="DRG"
+                android:textSize="10sp"
+                android:layout_marginLeft="34dp"
+                android:textColor="@color/blue"
+                android:id="@+id/tvdrg"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" />
+            <TextView
+                android:layout_width="40px"
+                android:layout_height="30px"
+                android:text="TAB"
+                android:textSize="10sp"
+                android:layout_marginLeft="10px"
+                android:textColor="@color/blue"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/tvdrg"
+                android:id="@+id/tvtab" />
+            <TextView
+                android:layout_width="40px"
+                android:layout_height="30px"
+                android:text="RCL"
+                android:textSize="10sp"
+                android:layout_marginLeft="10px"
+                android:textColor="@color/blue"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/tvtab"
+                android:id="@+id/tvrcl" />
+            <TextView
+                android:layout_width="40px"
+                android:layout_height="30px"
+                android:text="STO"
+                android:textSize="10sp"
+                android:layout_marginLeft="8px"
+                android:id="@+id/tvsto"
+                android:layout_toRightOf="@+id/tvrcl"
+                android:textColor="@color/blue"
+                android:layout_alignParentTop="true" />
+            <TextView
+                android:layout_width="40px"
+                android:layout_height="30px"
+                android:layout_marginLeft="10px"
+                android:text="M-"
+                android:textColor="@color/blue"
+                android:textSize="10sp"
+                android:layout_toRightOf="@+id/tvsto"
+                android:id="@+id/tvmmin"
+                android:layout_alignParentTop="true" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rlbutn1"
+            android:layout_below="@+id/rltv1"
+            android:layout_centerHorizontal="true">
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="41px"
+                android:layout_height="25px"
+                android:textSize="8sp"
+                android:text="SHIFT"
+                android:textColor="@color/black"
+                android:id="@+id/btnsft"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="41px"
+                android:layout_height="25px"
+                android:textSize="8sp"
+                android:textColor="@color/black"
+                android:text="DRG"
+                android:layout_marginLeft="3dp"
+                android:id="@+id/btndeg"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignTop="@+id/btnsft"
+                android:layout_toRightOf="@+id/btnsft" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="41px"
+                android:layout_height="25px"
+                android:textSize="8sp"
+                android:textColor="@color/black"
+                android:text="FSE"
+                android:layout_marginLeft="3dp"
+                android:id="@+id/btnfse"
+                android:layout_alignTop="@+id/btndeg"
+                android:layout_toRightOf="@+id/btndeg" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="41px"
+                android:layout_height="25px"
+                android:textSize="8sp"
+                android:textColor="@color/black"
+                android:text="MR"
+                android:layout_marginLeft="3dp"
+                android:id="@+id/btnmr"
+                android:layout_alignTop="@+id/btnfse"
+                android:layout_toRightOf="@+id/btnfse" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="41px"
+                android:layout_height="25px"
+                android:textSize="8sp"
+                android:textColor="@color/black"
+                android:text="MS"
+                android:layout_marginLeft="3dp"
+                android:id="@+id/btnms"
+                android:layout_alignTop="@+id/btnmr"
+                android:layout_toRightOf="@+id/btnmr" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="41px"
+                android:layout_height="25px"
+                android:textSize="8sp"
+                android:textColor="@color/black"
+                android:text="M+"
+                android:layout_marginLeft="3dp"
+                android:id="@+id/btnmpos"
+                android:layout_alignTop="@+id/btnms"
+                android:layout_toRightOf="@+id/btnms" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rltv2"
+            android:layout_marginTop="2px"
+            android:layout_alignRight="@+id/rlbutn2"
+            android:layout_below="@+id/rlbutn1"
+            android:layout_alignLeft="@+id/rlbutn2">
+            <TextView
+                android:layout_width="50px"
+                android:layout_height="30px"
+                android:text="DRGxx"
+                android:textSize="8sp"
+                android:textColor="@color/blue"
+                android:id="@+id/tvhyp"
+                android:layout_marginLeft="15dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" />
+            <TextView
+                android:layout_width="50px"
+                android:layout_height="30px"
+                android:text="Arsin"
+                android:textSize="8sp"
+                android:textColor="@color/blue"
+                android:id="@+id/tvsin"
+                android:layout_marginLeft="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/tvhyp" />
+            <TextView
+                android:layout_width="50px"
+                android:layout_height="30px"
+                android:layout_marginLeft="15sp"
+                android:text="Arcos"
+                android:textSize="8sp"
+
+                android:textColor="@color/blue"
+                android:id="@+id/tvcos"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/tvsin" />
+            <TextView
+                android:layout_width="50px"
+                android:layout_height="30px"
+                android:text="Artan"
+                android:textSize="8sp"
+                android:layout_marginLeft="15sp"
+                android:id="@+id/tvtan"
+                android:textColor="@color/blue"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/tvcos" />
+            <TextView
+                android:layout_width="50px"
+                android:layout_height="30px"
+                android:textSize="8sp"
+                android:textColor="@color/blue"
+                android:text="e4"
+                android:id="@+id/tve"
+                android:layout_marginLeft="18sp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/tvtan"
+                />
+            <TextView
+                android:layout_width="50px"
+                android:layout_height="30px"
+                android:text="M-"
+                android:layout_marginLeft="13sp"
+                android:textColor="@color/blue"
+                android:textSize="8sp"
+                android:id="@+id/tvneglog"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/tve" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rlbutn2"
+            android:layout_below="@+id/rltv2"
+            android:layout_alignLeft="@+id/rlbutn1">
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="41px"
+                android:layout_height="25px"
+                android:textSize="8sp"
+                android:textColor="@color/black"
+                android:text="hyp"
+                android:id="@+id/btnhyp"
+                android:layout_alignParentLeft="true" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="41px"
+                android:layout_height="25px"
+                android:textSize="8sp"
+                android:textColor="@color/black"
+                android:text="sin"
+                android:layout_marginLeft="3dp"
+                android:id="@+id/btnsin"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignTop="@+id/btnhyp"
+                android:layout_toRightOf="@+id/btnhyp" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="41px"
+                android:layout_height="25px"
+                android:textSize="8sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="3dp"
+                android:text="cos"
+                android:id="@+id/btncos"
+                android:layout_alignTop="@+id/btnsin"
+                android:layout_toRightOf="@+id/btnsin" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="41px"
+                android:layout_height="25px"
+                android:textSize="8sp"
+                android:textColor="@color/black"
+                android:text="tan"
+                android:layout_marginLeft="3dp"
+                android:id="@+id/btntan"
+                android:layout_alignTop="@+id/btncos"
+                android:layout_toRightOf="@+id/btncos" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="41px"
+                android:layout_height="25px"
+                android:textSize="8sp"
+                android:textColor="@color/black"
+                android:text="ln"
+                android:layout_marginLeft="3dp"
+                android:id="@+id/btnln"
+                android:layout_alignTop="@+id/btntan"
+                android:layout_toRightOf="@+id/btntan" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="41px"
+                android:layout_height="25px"
+                android:textSize="8sp"
+                android:textColor="@color/black"
+                android:text="log"
+                android:layout_marginLeft="3dp"
+                android:id="@+id/btnlog"
+                android:layout_alignTop="@+id/btnln"
+                android:layout_toRightOf="@+id/btnln" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rltv3"
+            android:layout_below="@+id/rlbutn2"
+            android:layout_alignLeft="@+id/rlbutn2"
+            android:layout_alignRight="@+id/rltv4">
+
+            <TextView
+                android:layout_width="50px"
+                android:layout_height="30px"
+                android:textSize="8sp"
+                android:text="³√"
+                android:textColor="@color/blue"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="110px"
+                android:id="@+id/tvcroot" />
+            <TextView
+                android:layout_width="50px"
+                android:layout_height="30px"
+                android:text="x³"
+                android:textSize="8sp"
+                android:textColor="@color/blue"
+                android:layout_marginLeft="30px"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/tvcroot"
+                android:id="@+id/tvcube" />
+            <TextView
+                android:layout_width="50px"
+                android:layout_height="30px"
+                android:text="1/x"
+                android:textSize="8sp"
+                android:id="@+id/tvinv"
+                android:layout_marginLeft="17px"
+                android:textColor="@color/blue"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/tvcube" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rlbutn3"
+
+            android:layout_below="@+id/rltv3"
+            android:layout_centerHorizontal="true">
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="41px"
+                android:layout_height="25px"
+                android:textSize="8sp"
+                android:textColor="@color/black"
+
+                android:text="hyp"
+                android:id="@+id/btnpow"
+                android:layout_alignParentLeft="true" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="41px"
+                android:layout_height="25px"
+                android:textSize="8sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="3dp"
+                android:text="√"
+                android:id="@+id/btnroot"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignTop="@+id/btnpow"
+                android:layout_toRightOf="@+id/btnpow" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="41px"
+                android:layout_height="25px"
+                android:textSize="8sp"
+                android:layout_marginLeft="3dp"
+                android:textColor="@color/black"
+                android:text="x²"
+                android:id="@+id/btnsqr"
+                android:layout_alignTop="@+id/btnroot"
+                android:layout_toRightOf="@+id/btnroot" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="41px"
+                android:layout_height="25px"
+                android:textSize="8sp"
+                android:layout_marginLeft="3dp"
+                android:textColor="@color/black"
+                android:text="%"
+                android:id="@+id/btnpcnt"
+                android:layout_alignTop="@+id/btnsqr"
+                android:layout_toRightOf="@+id/btnsqr" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="41px"
+                android:layout_height="25px"
+                android:textSize="8sp"
+                android:textColor="@color/black"
+                android:enabled="false"
+                android:layout_marginLeft="3dp"
+                android:text=""
+                android:id="@+id/btnfb"
+                android:layout_alignTop="@+id/btnpcnt"
+                android:layout_toRightOf="@+id/btnpcnt" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="41px"
+                android:layout_height="25px"
+                android:textSize="8sp"
+                android:textColor="@color/black"
+                android:enabled="false"
+                android:text=""
+                android:layout_marginLeft="3dp"
+                android:id="@+id/btnsb"
+                android:layout_alignTop="@+id/btnfb"
+                android:layout_toRightOf="@+id/btnfb" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativeLayout"
+            android:layout_marginTop="20px"
+            android:layout_below="@+id/rlbutn3"
+            android:layout_alignRight="@+id/rlbutn3"
+            android:layout_alignLeft="@+id/rlbutn3">
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="50px"
+                android:layout_height="40px"
+                android:textColor="@color/black"
+                android:text="7"
+                android:id="@+id/btn7"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="50px"
+                android:layout_height="40px"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5px"
+                android:text="8"
+                android:id="@+id/button2"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/btn7" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="50px"
+                android:layout_height="40px"
+                android:layout_marginLeft="5px"
+                android:text="9"
+                android:textColor="@color/black"
+                android:id="@+id/button3"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/button2" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="50px"
+                android:layout_height="40px"
+                android:layout_marginLeft="5px"
+                android:text="DEL"
+                android:id="@+id/button4"
+                android:layout_alignParentTop="true"
+                android:textColor="@color/red"
+                android:layout_toRightOf="@+id/button3" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="50px"
+                android:layout_height="40px"
+                android:layout_marginLeft="5px"
+                android:text="AC"
+                android:textColor="@color/red"
+                android:id="@+id/button5"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/button4" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rltv4"
+            android:layout_alignRight="@+id/rlbutn3"
+            android:layout_below="@+id/relativeLayout"
+            android:layout_alignLeft="@+id/relativeLayout">
+            <TextView
+                android:layout_width="50px"
+                android:layout_height="30px"
+                android:textSize="10sp"
+                android:text="n!"
+                android:textColor="@color/blue"
+                android:id="@+id/tvfact"
+                android:layout_marginLeft="22dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" />
+            <TextView
+                android:layout_width="50px"
+                android:layout_height="30px"
+                android:textSize="10sp"
+                android:text="nCr"
+                android:textColor="@color/blue"
+                android:id="@+id/tvncr"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/tvfact"
+                android:layout_marginLeft="22dp" />
+            <TextView
+                android:layout_width="50px"
+                android:layout_height="30px"
+                android:textSize="10sp"
+
+                android:text="nPr"
+                android:textColor="@color/blue"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/tvnpr"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/tvncr" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativeLayout2"
+            android:layout_below="@+id/rltv4"
+            android:layout_alignRight="@+id/rltv4"
+            android:layout_alignLeft="@+id/relativeLayout">
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="50px"
+                android:layout_height="40px"
+                android:textColor="@color/black"
+                android:text="4"
+                android:id="@+id/btn4"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="50px"
+                android:layout_height="40px"
+                android:layout_marginLeft="5px"
+                android:textColor="@color/black"
+                android:text="5"
+                android:id="@+id/btn5"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/btn4" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="50px"
+                android:layout_height="40px"
+                android:layout_marginLeft="5px"
+                android:textColor="@color/black"
+                android:text="6"
+                android:id="@+id/btn6"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/btn5" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="50px"
+                android:layout_height="40px"
+                android:layout_marginLeft="5px"
+                android:textColor="@color/black"
+                android:text="*"
+                android:id="@+id/btnmul"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/btn6" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="50px"
+                android:layout_height="40px"
+                android:layout_marginLeft="5px"
+                android:textColor="@color/black"
+                android:text="/"
+                android:id="@+id/btndev"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/btnmul" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rltv5"
+            android:layout_below="@+id/relativeLayout2"
+            android:layout_alignLeft="@+id/rlbutn3">
+            <TextView
+                android:layout_width="50px"
+                android:layout_height="30px"
+                android:textSize="10sp"
+                android:text="π"
+                android:textColor="@color/blue"
+                android:id="@+id/tvpie"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="22dp" />
+            <TextView
+                android:layout_width="50px"
+                android:layout_height="30px"
+                android:textSize="10sp"
+                android:text="e"
+                android:textColor="@color/blue"
+                android:id="@+id/tveval"
+                android:layout_marginLeft="23dp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/tvpie" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativeLayout3"
+            android:layout_below="@+id/rltv5"
+            android:layout_alignLeft="@+id/relativeLayout2"
+            android:layout_alignRight="@+id/relativeLayout2">
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="55px"
+                android:layout_height="40px"
+                android:textColor="@color/black"
+                android:text="1"
+                android:id="@+id/btn1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="55px"
+                android:layout_height="40px"
+                android:layout_marginLeft="5px"
+                android:textColor="@color/black"
+                android:text="2"
+                android:id="@+id/btn2"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/btn1" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="55px"
+                android:layout_height="40px"
+                android:layout_marginLeft="5px"
+                android:textColor="@color/black"
+                android:text="3"
+                android:id="@+id/btn3"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/btn2" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="55px"
+                android:layout_height="40px"
+                android:layout_marginLeft="5px"
+                android:textColor="@color/black"
+                android:text="+"
+                android:id="@+id/btnplus"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/btn3" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="55px"
+                android:layout_height="40px"
+                android:layout_marginLeft="5px"
+                android:textColor="@color/black"
+                android:text="-"
+                android:id="@+id/btnmin"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/btnplus" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rltv6"
+            android:layout_alignLeft="@+id/relativeLayout3"
+            android:layout_below="@+id/relativeLayout3"
+            android:layout_alignRight="@+id/relativeLayout3">
+            <TextView
+                android:layout_width="50px"
+                android:layout_height="30px"
+                android:textSize="10sp"
+                android:text="MOD"
+                android:textColor="@color/blue"
+                android:id="@+id/tvmod"
+                android:layout_marginRight="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/tvans" />
+            <TextView
+                android:layout_width="50px"
+                android:layout_height="30px"
+                android:textSize="10sp"
+                android:text="ANS"
+                android:textColor="@color/blue"
+                android:id="@+id/tvans"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativeLayout4"
+            android:layout_below="@+id/rltv6"
+            android:layout_alignRight="@+id/relativeLayout3"
+            android:layout_alignLeft="@+id/rltv6">
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="50px"
+                android:layout_height="40px"
+                android:textColor="@color/black"
+                android:text="0"
+                android:id="@+id/btn0"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="50px"
+                android:layout_height="40px"
+                android:layout_marginLeft="5px"
+                android:textColor="@color/black"
+                android:text="±"
+                android:id="@+id/btnplmin"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/btn0" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="50px"
+                android:layout_height="40px"
+                android:layout_marginLeft="5px"
+                android:textColor="@color/black"
+                android:text="."
+                android:id="@+id/btndec"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/btnplmin" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="50px"
+                android:layout_height="40px"
+                android:layout_marginLeft="5px"
+                android:textColor="@color/black"
+                android:text="EXP"
+                android:id="@+id/btnexp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/btndec" />
+
+            <Button
+                android:background="@drawable/keppadnew"
+                android:layout_width="50px"
+                android:layout_height="40px"
+                android:layout_marginLeft="5px"
+                android:textColor="@color/black"
+                android:text="="
+                android:id="@+id/btneql"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/btnexp" />
+        </RelativeLayout>
+    </RelativeLayout>
+    </HorizontalScrollView>
+</ScrollView>

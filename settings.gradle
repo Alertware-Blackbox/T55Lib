@@ -1,0 +1,3 @@
+include ':myT55library'
+include ':app'
+rootProject.name = "T55 Lib"

@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/world_map_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl_main"
+        android:background="@color/black_tran"
+        android:layout_margin="10sp">
+        <RelativeLayout
+            android:id="@+id/card_view_main"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginTop="20dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/rl_01"
+                    android:layout_marginLeft="16sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5sp"
+                    android:layout_height="wrap_content"
+                   android:gravity="center" >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:id="@+id/rl_08"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tv_utc_time"
+                            android:text="UTC Time :"
+                            android:layout_weight="0.80"
+                            android:textSize="15sp"
+                            android:textColor="@color/black"
+                            android:gravity="left"
+                            android:layout_toRightOf="@+id/imageView"
+                            />
+
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <!-- <View
+                     android:layout_width="match_parent"
+                     android:layout_height="1px"
+                     android:background="@color/black"
+                     android:layout_marginLeft="10dp"
+                     android:layout_marginRight="10sp"
+                     >
+                 </View>-->
+                <RelativeLayout
+                    android:id="@+id/rl_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="16sp"
+                    android:layout_marginBottom="5sp"
+                    android:visibility="gone"
+                    android:layout_below="@id/rl_01">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="100sp"
+                            android:gravity="left"
+                            android:layout_marginLeft="5sp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:id="@+id/tv_driver_name_call"
+                                android:text="driver name"
+                                android:layout_centerVertical="true"
+                                android:textSize="10sp"
+                                android:textColor="@color/black"
+                                android:gravity="left"
+                                android:layout_toRightOf="@+id/imageView"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tv_driver_number"
+                                android:text="driver number"
+                                android:layout_centerVertical="true"
+                                android:textSize="10sp"
+                                android:textColor="@color/black"
+                                android:gravity="left"
+                                android:layout_toRightOf="@+id/imageView"
+                                />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@id/rl_11"
+                    android:layout_marginBottom="10sp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:gravity="left"
+                        android:layout_marginLeft="16sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5sp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_latitude"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Latitude "
+                            android:textSize="15sp"
+                            android:textColor="@color/black"
+                            android:gravity="left"
+                            android:layout_toRightOf="@+id/imageView"
+                            />
+
+
+
+                    </LinearLayout>
+                   <!--  <View
+                          android:layout_width="match_parent"
+                          android:layout_height="1px"
+                          android:background="@color/black"
+                          android:layout_marginLeft="10dp"
+                          android:layout_marginRight="10sp">
+                      </View>-->
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rl_12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@id/rl_10"
+                    android:layout_marginBottom="10sp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+
+                        android:gravity="left"
+                        android:layout_marginLeft="16sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp"
+                        android:orientation="horizontal">
+
+
+                        <TextView android:id="@+id/tv_longitude"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Longitude"
+                            android:textSize="15sp"
+                            android:textColor="@color/black"
+                            android:gravity="left"
+                            android:layout_toRightOf="@+id/imageView"
+                            />
+
+
+                    </LinearLayout>
+                    <!--<View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/black"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginRight="10sp">
+                    </View>-->
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rl_13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@id/rl_12"
+                    android:layout_marginBottom="10sp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+
+                        android:gravity="left"
+                        android:layout_marginLeft="16sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_speed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Speed Over Ground "
+                            android:layout_gravity="center"
+                            android:textSize="15sp"
+                            android:textColor="@color/black"
+                            android:gravity="left"
+                            android:layout_toRightOf="@+id/imageView"
+                            android:layout_marginRight="40sp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@id/rl_13"
+                    android:layout_marginBottom="10sp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+
+                        android:gravity="left"
+                        android:layout_marginLeft="16sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_altitude"
+                            android:layout_width="110sp"
+                            android:layout_height="wrap_content"
+                            android:text="Ellipsod Altitude "
+                            android:layout_gravity="center"
+                            android:textSize="15sp"
+                            android:textColor="@color/black"
+                            android:gravity="left"
+                            android:layout_toRightOf="@+id/imageView"
+                            android:layout_marginRight="40sp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@id/rl_14"
+                    android:layout_marginBottom="10sp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+
+                        android:gravity="left"
+                        android:layout_marginLeft="16sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_hdop"
+                            android:layout_width="110sp"
+                            android:layout_height="wrap_content"
+                            android:text="HDOP "
+                            android:layout_gravity="center"
+                            android:textSize="15sp"
+                            android:textColor="@color/black"
+                            android:gravity="left"
+                            android:layout_toRightOf="@+id/imageView"
+                            android:layout_marginRight="40sp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@id/rl_15"
+                    android:layout_marginBottom="10sp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+
+                        android:gravity="left"
+                        android:layout_marginLeft="16sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_satelite_used"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Satelite Used "
+                            android:layout_gravity="center"
+                            android:textSize="15sp"
+                            android:textColor="@color/black"
+                            android:gravity="left"
+                            android:layout_toRightOf="@+id/imageView"
+                            android:layout_marginRight="40sp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rl_17"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@id/rl_16"
+                    android:layout_marginBottom="10sp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:gravity="left"
+                        android:layout_marginLeft="16sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_accurancy_h"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Horizantal Accurancy  "
+                            android:layout_gravity="center"
+                            android:textSize="15sp"
+                            android:textColor="@color/black"
+                            android:gravity="left"
+                            android:layout_toRightOf="@+id/imageView"
+                            android:layout_marginRight="40sp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_18"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@id/rl_17"
+                    android:layout_marginBottom="10sp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:gravity="left"
+                        android:layout_marginLeft="16sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_accurancy_v"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Vertical Accurancy  "
+                            android:layout_gravity="center"
+                            android:textSize="15sp"
+                            android:textColor="@color/black"
+                            android:gravity="left"
+                            android:layout_toRightOf="@+id/imageView"
+                            android:layout_marginRight="40sp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@id/rl_18"
+                    android:layout_marginBottom="10sp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:gravity="left"
+                        android:layout_marginLeft="16sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_vdop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="VDOP  "
+                            android:layout_gravity="center"
+                            android:textSize="15sp"
+                            android:textColor="@color/black"
+                            android:gravity="left"
+                            android:layout_toRightOf="@+id/imageView"
+                            android:layout_marginRight="40sp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@id/rl_19"
+                    android:layout_marginBottom="10sp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:gravity="left"
+                        android:layout_marginLeft="16sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_pdop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PDOP  "
+                            android:layout_gravity="center"
+                            android:textSize="15sp"
+                            android:textColor="@color/black"
+                            android:gravity="left"
+                            android:layout_toRightOf="@+id/imageView"
+                            android:layout_marginRight="40sp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+<!--
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/black"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="10sp">
+                    </View>-->
+                </RelativeLayout>
+                <!--  <RelativeLayout
+                      android:id="@+id/rl_12"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:layout_below="@id/rl_11"
+                      android:visibility="gone"
+                      android:layout_marginBottom="@dimen/_10sdp">
+
+                      <LinearLayout
+                          android:layout_width="wrap_content"
+
+                          android:gravity="center"
+                          android:layout_marginLeft="@dimen/_16sdp"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="@dimen/_10sdp"
+                          android:orientation="horizontal">
+
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:textStyle="bold"
+                              android:text="Trip Info : "
+                              android:textSize="@dimen/_10sdp"
+                              android:textColor="@color/white"
+                              android:gravity="left"
+                              android:layout_toRightOf="@+id/imageView"
+                              android:typeface="serif"/>
+
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+
+                              android:id="@+id/tv_trip_info"
+                              android:text="Baguihati "
+                              android:layout_centerVertical="true"
+                              android:textSize="@dimen/_10sdp"
+                              android:textColor="@color/yellow"
+                              android:gravity="center"
+                              android:layout_toRightOf="@+id/imageView"
+                              android:typeface="serif"/>
+
+
+
+                      </LinearLayout>
+                      <View
+                          android:layout_width="match_parent"
+                          android:layout_height="2px"
+                          android:background="@color/black"
+                          android:layout_marginLeft="@dimen/_20sdp"
+                          android:layout_marginRight="@dimen/_10sdp">
+                      </View>
+                  </RelativeLayout>-->
+
+
+
+
+
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+

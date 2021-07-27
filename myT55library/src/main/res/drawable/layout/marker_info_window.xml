@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="500dp"
+        android:layout_height="200dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:text="Latitude"/>
+
+            <TextView
+                android:id="@+id/txtInfoWlatitude"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5" />
+        </LinearLayout>
+
+        <!--Longitude-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:text="Longitude"/>
+
+            <TextView
+                android:id="@+id/txtInfoWLongitude"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5" />
+        </LinearLayout>
+
+        <!--Comment-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:text="Comment"/>
+
+            <TextView
+                android:id="@+id/txtInfoWComment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5" />
+        </LinearLayout>
+
+        <!--Date-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:text="Date"/>
+
+            <TextView
+                android:id="@+id/txtInfoWDate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5" />
+        </LinearLayout>
+
+
+        <!--Time-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:text="Time"/>
+
+            <TextView
+                android:id="@+id/txtInfoWTime"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

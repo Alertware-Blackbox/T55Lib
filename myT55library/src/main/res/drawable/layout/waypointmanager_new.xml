@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/layout_background_layer_new"
+            android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/txtHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Waypoint Manager"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:shadowColor="#000000"
+        android:shadowRadius="0"
+        android:shadowDy="3"
+        android:textAppearance="?android:attr/textAppearanceMedium" 
+         android:background="@drawable/layout_title_bar_new"/>
+
+            <LinearLayout
+                android:id="@+id/ll1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp" 
+                android:layout_below="@+id/txtHeader">
+
+                <Button
+                    android:id="@+id/btnDate"
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/layout_buttons"                
+                android:text="Select Date"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:visibility="invisible"/>
+                
+                <Button 
+                    android:id="@+id/btn_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                     android:layout_marginLeft="10dp"
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                    android:text="17-04-2015"
+                    android:background="@drawable/layout_buttons"     
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@+id/ll1" >
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Select Project "
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <Spinner
+                    android:id="@+id/spinSelectProject"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dip" />
+            </LinearLayout>
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+				android:layout_below="@+id/ll2">
+
+                <ScrollView
+                    android:id="@+id/sv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/textView1"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:fadeScrollbars="true"
+                    android:orientation="vertical"
+                    android:scrollbarFadeDuration="2000"
+                    android:scrollbarStyle="insideOverlay"
+                    android:scrollbars="vertical" >
+
+                    <HorizontalScrollView
+                        android:id="@+id/horizontalView"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginTop="5dip"
+                        android:scrollbars="vertical" >
+
+                        <LinearLayout
+                            android:id="@+id/ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical" >
+
+                            <TableLayout
+                                android:id="@+id/tableLayout1"
+                                android:layout_width="293dp"
+                                android:layout_height="wrap_content"
+                                android:background="#e7e5e5"
+                                android:isScrollContainer="true"
+                                android:layout_marginRight="0dip"
+                                android:stretchColumns="*" >
+
+                                <TableRow
+                                    android:layout_width="fill_parent"
+                                    android:layout_margin="1dip"
+                                    android:background="#000" >
+
+                                    <TextView
+                                        android:layout_margin="1dip"
+                                        android:background="#e7e5e5"
+                                        android:gravity="left"
+                                        android:text="  WP"
+                                        android:textColor="@android:color/black"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_margin="1dip"
+                                        android:background="#e7e5e5"
+                                        android:text="  Tags"
+                                        android:textColor="@android:color/black"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_margin="1dip"
+                                        android:background="#e7e5e5"
+                                        android:text="  Sat Count"
+                                        android:textColor="@android:color/black"
+                                        android:textStyle="bold" />
+                                </TableRow>
+                            </TableLayout>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </ScrollView>
+            </FrameLayout>
+
+<!--         <LinearLayout
+            android:id="@+id/ll3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="right"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+             android:layout_marginBottom="5dp"
+            android:gravity="bottom|center" >
+
+            <Button
+                android:id="@+id/btnExit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_buttons"
+                android:text="Back"
+                android:textColor="#000000" />
+
+        </LinearLayout> -->
+ </RelativeLayout>
+</LinearLayout>

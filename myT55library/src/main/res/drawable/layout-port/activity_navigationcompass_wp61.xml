@@ -1,0 +1,359 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/layout_background_layer_new"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/rl_head"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/layout_title_bar_new"
+            android:padding="5dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="0dp" >
+
+            <TextView
+                android:id="@+id/tv_df_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="Navigation"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/rl_head"
+            android:id="@+id/rllochead">
+
+            <TextView
+                android:id="@+id/tv_curr_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Current Location:"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp"
+                android:textSize="14sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" />
+            <TextView
+                android:id="@+id/tv_dest_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Destination Location:"
+                android:textColor="@color/black"
+                android:layout_marginRight="5dp"
+                android:textSize="14sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/rllochead"
+            android:id="@+id/rlcurrlat">
+            <TextView
+                android:id="@+id/tv_currlat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Latitude:"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:textSize="10sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" />
+            <TextView
+                android:id="@+id/tv_latvalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="NA"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp"
+                android:textSize="10sp"
+                android:layout_toRightOf="@+id/tv_currlat"
+
+                />
+            <TextView
+                android:id="@+id/tv_destlat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Latitude:"
+                android:textColor="@color/black"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"
+                android:textSize="10sp"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/tv_deslatvalue"
+                />
+            <TextView
+                android:id="@+id/tv_deslatvalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text=""
+                android:textColor="@color/black"
+                android:layout_marginRight="5dp"
+                android:textSize="10sp"
+                android:layout_alignParentRight="true"
+
+
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/rlcurrlat"
+            android:id="@+id/rlcurrlon">
+
+            <TextView
+                android:id="@+id/tv_destlon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Longitude:"
+                android:textColor="@color/black"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"
+                android:textSize="10sp"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/tv_destlonvalue"
+                />
+            <TextView
+                android:id="@+id/tv_destlonvalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="NA"
+                android:textColor="@color/black"
+                android:layout_marginRight="5dp"
+                android:textSize="10sp"
+
+                android:layout_alignParentRight="true"
+
+                />
+            <TextView
+                android:id="@+id/tv_currlon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Longitude:"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:textSize="10sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" />
+            <TextView
+                android:id="@+id/tv_lonvalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="NA"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp"
+                android:textSize="10sp"
+                android:layout_toRightOf="@+id/tv_currlon"
+
+                />
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlcurrlon"
+            android:layout_marginTop="10dp"
+            android:id="@+id/rlimage">
+            <ImageView
+                android:id="@+id/imageViewCompass"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:layout_centerInParent="true"
+                android:antialias="true"
+
+                android:dither="true"
+                android:filter="true"
+                android:src="@drawable/comapassnew" />
+
+            <ImageView
+                android:id="@+id/imageViewCompassNeedle"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_centerInParent="true"
+                android:antialias="true"
+                android:dither="true"
+                android:filter="true"
+                android:src="@drawable/needle_blue" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/rlimage"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/rlnavdet_head">
+            <TextView
+                android:id="@+id/tv_navhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Navigation Details:"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:textSize="14sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/rlnavdet_head"
+            android:id="@+id/rlnavdet1">
+            <TextView
+                android:id="@+id/tv_deviation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deviation:"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/tv_deviationvalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="NA"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp"
+                android:textSize="12sp"
+                android:layout_toRightOf="@+id/tv_deviation"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/rlnavdet"
+            android:layout_below="@+id/rlnavdet1">
+            <TextView
+                android:id="@+id/tv_bearing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bearing:"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" />
+            <TextView
+                android:id="@+id/tv_bearvalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="NA"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp"
+                android:textSize="12sp"
+                android:layout_toRightOf="@+id/tv_bearing"
+
+                />
+
+            <TextView
+                android:id="@+id/tv_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Distance:"
+                android:textColor="@color/black"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/tv_distancevalue"
+                />
+            <TextView
+                android:id="@+id/tv_distancevalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="NA"
+                android:textColor="@color/black"
+                android:layout_marginRight="5dp"
+                android:textSize="12sp"
+                android:layout_alignParentRight="true"
+
+
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rlhide"
+            android:layout_below="@+id/rlnavdet"
+            android:visibility="invisible">
+            <TextView
+                android:id="@+id/tv_hide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bearing:"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" />
+            <TextView
+                android:id="@+id/tv_hid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="22.89885"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp"
+                android:textSize="12sp"
+                android:layout_toRightOf="@+id/tv_hide"
+
+                />
+
+
+        </RelativeLayout>
+        <!--<TextView-->
+        <!--android:id="@+id/distance"-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="30dp"-->
+        <!--android:background="@drawable/textview_bg"-->
+        <!--android:gravity="center"-->
+        <!--android:textColor="@color/ivory"-->
+        <!--android:textSize="25sp" />-->
+    </RelativeLayout>
+
+
+</ScrollView>

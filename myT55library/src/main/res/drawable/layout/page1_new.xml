@@ -1,0 +1,160 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/layout_background_layer_new"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btnSatInfo"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_background_main_new"
+            android:drawableTop="@drawable/ic_satellite_info"
+            android:gravity="center"
+            android:onClick="buttonClick"
+            android:paddingTop="15dp"
+            android:shadowColor="#000000"
+            android:shadowDy="0"
+            android:shadowRadius="0"
+            android:text="Sky Plot"
+            android:textStyle="normal"
+            android:textColor="@color/black_dashboard"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btnAvgWaypoint"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_background_main_new"
+            android:drawableTop="@drawable/ic_avg_waypoint"
+            android:gravity="center"
+            android:onClick="buttonClick"
+            android:paddingTop="15dp"
+            android:shadowColor="#000000"
+            android:shadowDy="2"
+            android:shadowRadius="0"
+            android:text="Average Waypoint"
+            android:textColor="@color/black_dashboard"
+            android:textSize="12sp"
+            android:textStyle="normal" />
+
+        <Button
+            android:id="@+id/btnAccessories"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_background_main_new"
+            android:drawableTop="@drawable/utilites"
+            android:gravity="center"
+            android:onClick="buttonClick"
+            android:paddingTop="15dp"
+            android:shadowColor="#000000"
+            android:shadowDy="2"
+            android:shadowRadius="0"
+            android:text="Utilities"
+            android:textColor="@color/black_dashboard"
+            android:textSize="12sp"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btnMarkWaypoint"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_background_main_new"
+            android:drawableTop="@drawable/ic_mark_waypoint"
+            android:gravity="center"
+            android:onClick="buttonClick"
+            android:paddingTop="15dp"
+            android:shadowColor="#000000"
+            android:shadowDy="2"
+            android:shadowRadius="0"
+            android:text="Mark Waypoint"
+            android:textColor="@color/black_dashboard"
+            android:textSize="12sp"
+            android:textStyle="normal" />
+        
+        <Button
+            android:id="@+id/btnWaypointManager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_background_main_new"
+            android:drawableTop="@drawable/ic_waypoint_manager"
+            android:gravity="center"
+            android:onClick="buttonClick"
+            android:paddingTop="15dp"
+            android:shadowColor="#000000"
+            android:shadowDy="2"
+            android:shadowRadius="0"
+            android:text="Waypoint Manager"
+            android:textColor="@color/black_dashboard"
+            android:textSize="12sp"
+            android:textStyle="normal" />
+
+        <Button
+            android:id="@+id/btnConfig"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_background_main_new"
+            android:drawableTop="@drawable/ic_settings"
+            android:gravity="center"
+            android:onClick="buttonClick"
+            android:paddingBottom="10dp"
+            android:paddingTop="15dp"
+            android:shadowColor="#000000"
+            android:shadowDy="3"
+            android:shadowRadius="0"
+            android:text="Settings"
+            android:textColor="@color/black_dashboard"
+            android:textSize="12sp"
+            android:textStyle="normal" />
+
+        <!--  -->
+
+        
+        
+    </LinearLayout>
+
+</LinearLayout><!-- </ScrollView> -->

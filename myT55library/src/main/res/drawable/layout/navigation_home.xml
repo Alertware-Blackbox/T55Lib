@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:scrollbars="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/layout_background_layer_new">
+
+        <TextView
+            android:id="@+id/txtHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Navigation"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:shadowColor="#000000"
+            android:shadowRadius="0"
+            android:shadowDy="3"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="@drawable/layout_title_bar_new"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/txtHeader"
+            android:id="@+id/currloc"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_subheading"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Current Location"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="15dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/currloc"
+            android:id="@+id/currlat"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_lat"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Latitude"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:id="@+id/TrackLat"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/currlat"
+            android:id="@+id/currlon"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_lng"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Longitude"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/TrackLon"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:layout_weight="0.4"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/ll_manualblock"
+            android:id="@+id/datum"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_datum"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Selected Datum"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:id="@+id/tv_datum"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="left"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_zone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/currlon"
+            android:visibility="gone">
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Zone"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_weight="0.6"/>
+
+            <TextView
+                android:id="@+id/tv_zone_val"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:gravity="left"
+                android:layout_weight="0.4"
+                android:text=""
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/llnavigate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/ll_zone"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Navigate To"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinnavigateto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/spinner_bg" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/llproject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/llnavigate"
+            android:visibility="visible"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.91"
+                android:text="Select Project"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinproject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/spinner_bg" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_manuallatdeg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/llproject"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_manuallatdeg"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Enter Latitude (Degree)"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/TrackmanualLatdeg"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:inputType="numberDecimal"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:layout_weight="0.4"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_manuallatmin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/ll_manuallatdeg"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_manuallatmin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Enter Latitude (Minute)"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/TrackmanualLatmin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:inputType="numberDecimal"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:layout_weight="0.4"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_manuallatsec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/ll_manuallatmin"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_manuallatsec"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Enter Latitude (Second)"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/TrackmanualLatsec"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:inputType="numberDecimal"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:layout_weight="0.4"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_manuallondeg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/ll_manuallatsec"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_lngmanualdeg"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Enter Longitude (Degree)"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/TrackLonmanualdeg"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:inputType="numberDecimal"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:layout_weight="0.4"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_manuallonmin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/ll_manuallondeg"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_lngmanualmin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Enter Longitude (Minute)"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/TrackLonmanualmin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:inputType="numberDecimal"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:layout_weight="0.4"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_manuallonsec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/ll_manuallonmin"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_lngmanualsec"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Enter Longitude (Second)"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/TrackLonmanualsec"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:inputType="numberDecimal"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:layout_weight="0.4"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_manualzone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/ll_manuallonsec"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_zonemanual"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Enter Zone"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/TrackZonemanual"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:layout_weight="0.4"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_manualblock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/ll_manualzone"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tv_label_blockmanual"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="Enter Block"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/TrackBlockmanual"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:layout_weight="0.4"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_manualbutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/datum"
+            android:orientation="horizontal" >
+            <Button
+                android:id="@+id/btnNavigate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@drawable/layout_buttons"
+                android:minHeight="10dp"
+                android:text="Navigate"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/llselcttrack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:visibility="visible"
+            android:orientation="vertical"
+            android:layout_below="@+id/ll_manualbutton">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.91"
+                android:text="Select Track"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spintrack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/spinner_bg" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/llselctform"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:visibility="visible"
+            android:orientation="vertical"
+            android:layout_below="@+id/llselcttrack">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.91"
+                android:text="Select Form"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinform"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/spinner_bg" />
+
+        </LinearLayout>
+        <HorizontalScrollView
+            android:id="@+id/horizontalWayointView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:scrollbars="vertical"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/llselctform">
+
+            <LinearLayout
+                android:id="@+id/llwaypointtable"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp">
+
+                <TableLayout
+                    android:id="@+id/tablewaypoint"
+                    android:layout_width="293dp"
+                    android:layout_height="wrap_content"
+                    android:background="#e7e5e5"
+                    android:isScrollContainer="true"
+                    android:layout_marginRight="0dip"
+                    android:stretchColumns="*" >
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_margin="1dip"
+                        android:background="#000" >
+
+                        <TextView
+                            android:layout_margin="1dip"
+                            android:background="#e7e5e5"
+                            android:gravity="left"
+                            android:text="  Waypoint No."
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_margin="1dip"
+                            android:background="#e7e5e5"
+                            android:text="  Date"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_margin="1dip"
+                            android:background="#e7e5e5"
+                            android:layout_marginRight="0dp"
+                            android:text="  Tag"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+        <HorizontalScrollView
+            android:id="@+id/horizontaltrackView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/horizontalWayointView"
+            android:layout_marginTop="5dip"
+            android:scrollbars="vertical" >
+
+            <LinearLayout
+                android:id="@+id/lltracktable"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp">
+
+                <TableLayout
+                    android:id="@+id/tabletrack"
+                    android:layout_width="293dp"
+                    android:layout_height="wrap_content"
+                    android:background="#e7e5e5"
+                    android:isScrollContainer="true"
+                    android:layout_marginRight="0dip"
+                    android:stretchColumns="*" >
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_margin="1dip"
+                        android:background="#000" >
+
+                        <TextView
+                            android:id="@+id/tabletrackno"
+                            android:layout_margin="1dip"
+                            android:background="#e7e5e5"
+                            android:gravity="left"
+                            android:text="  Point No."
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tabletracklat"
+                            android:layout_margin="1dip"
+                            android:background="#e7e5e5"
+                            android:text="  Latitude"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tabletracklon"
+                            android:layout_margin="1dip"
+                            android:background="#e7e5e5"
+                            android:text="  Longitude"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+        <HorizontalScrollView
+            android:id="@+id/horizontalPOIview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:scrollbars="vertical"
+            android:layout_below="@+id/horizontaltrackView"
+            android:layout_marginBottom="10dip">
+
+            <LinearLayout
+                android:id="@+id/llPOItable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp">
+
+                <TableLayout
+                    android:id="@+id/tablePOI"
+                    android:layout_width="293dp"
+                    android:layout_height="wrap_content"
+                    android:background="#e7e5e5"
+                    android:isScrollContainer="true"
+                    android:layout_marginRight="0dip"
+                    android:stretchColumns="*" >
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_margin="1dip"
+                        android:background="#000" >
+
+                        <TextView
+                            android:layout_margin="1dip"
+                            android:background="#e7e5e5"
+                            android:gravity="left"
+                            android:text="  POI No."
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            android:textAlignment="center"/>
+
+                        <TextView
+                            android:layout_margin="1dip"
+                            android:background="#e7e5e5"
+                            android:text="  POI Name"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            android:textAlignment="center"/>
+
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+        <HorizontalScrollView
+            android:id="@+id/horizontalView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="5dip"
+            android:scrollbars="vertical"
+            android:layout_below="@+id/horizontalPOIview">
+
+            <LinearLayout
+                android:id="@+id/llcollectdata"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp">
+
+                <TableLayout
+                    android:id="@+id/tableData"
+                    android:layout_width="293dp"
+                    android:layout_height="wrap_content"
+                    android:background="#e7e5e5"
+                    android:isScrollContainer="true"
+                    android:layout_marginRight="0dip"
+                    android:stretchColumns="*" >
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_margin="1dip"
+                        android:background="#000" >
+
+                        <TextView
+                            android:layout_margin="1dip"
+                            android:background="#e7e5e5"
+                            android:gravity="left"
+                            android:text="  Sl.No"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_margin="1dip"
+                            android:background="#e7e5e5"
+                            android:text="  Date"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_margin="1dip"
+                            android:background="#e7e5e5"
+                            android:layout_marginRight="0dp"
+                            android:text="  Time"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#88666666"
+            android:id="@+id/helplayout">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/left_bend2"
+                android:layout_marginTop="180dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/imageView26" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current location details"
+                android:textColor="@color/white"
+                android:layout_alignTop="@+id/imageView26"
+                android:layout_alignLeft="@+id/imageView26"
+                android:layout_marginLeft="39dp"
+                android:id="@+id/textView32" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/left_bend2"
+                android:id="@+id/imageView27"
+                android:layout_below="@+id/imageView26"
+                android:layout_alignLeft="@+id/imageView26" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Navigation Point"
+                android:id="@+id/textView2"
+                android:textColor="@color/white"
+                android:layout_alignTop="@+id/imageView27"
+                android:layout_toRightOf="@+id/imageView27"
+                android:layout_marginTop="37dp" />
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:id="@+id/imageViewnext"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/next1"
+                />
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/imageViewstop"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/exit3"
+                android:layout_alignParentRight="true"
+                />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</ScrollView>

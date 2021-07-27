@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/txtHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Preloaded POI"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:shadowColor="#000000"
+        android:shadowRadius="0"
+        android:shadowDy="3"
+        android:textAppearance="?android:attr/textAppearanceMedium" 
+         android:background="@drawable/layout_title_bar_new"/>
+
+    <TextView
+        android:id="@+id/poi_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_below="@+id/txtHeader"
+        android:layout_margin="15dp"
+        android:text="Listing of Point of interest"
+        android:gravity="center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black" />
+
+    <ListView
+        android:id="@+id/listPOI"
+        android:layout_below="@+id/poi_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp" >
+    </ListView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/helplayout"
+        android:background="#88666666">
+        <TextView
+            android:id="@+id/txtHeader1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Preloaded POI"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:shadowColor="#000000"
+            android:shadowRadius="0"
+            android:shadowDy="3"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="@drawable/layout_title_bar_new"/>
+
+        <TextView
+            android:id="@+id/poi_msg1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_below="@+id/txtHeader1"
+            android:layout_margin="15dp"
+            android:text="Listing of Point of interest"
+            android:gravity="center_horizontal"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black" />
+
+        <ListView
+            android:id="@+id/listPOI1"
+            android:visibility="invisible"
+            android:layout_below="@+id/poi_msg1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" >
+        </ListView>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/exit"
+            android:src="@drawable/exit3"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/right_bend"
+            android:layout_alignTop="@+id/listPOI1"
+            android:id="@+id/imageView2"
+            android:layout_toLeftOf="@+id/exit" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click on options to \nview POI details, \ndelete POI, \nnavigate to POI \nor set alarm."
+            android:textColor="@color/white"
+            android:id="@+id/textView30"
+            android:layout_alignTop="@+id/listPOI1"
+            android:layout_alignRight="@+id/imageView1" />
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/next"
+            android:src="@drawable/next1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/down"
+            android:id="@+id/imageView1"
+            android:layout_below="@+id/txtHeader1"
+            android:layout_centerHorizontal="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="List of all POI"
+            android:textColor="@color/white"
+            android:id="@+id/textView31"
+            android:layout_above="@+id/textView30"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</RelativeLayout>

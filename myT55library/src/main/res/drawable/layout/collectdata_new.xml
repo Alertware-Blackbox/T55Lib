@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" 
+        android:background="@drawable/layout_background_layer_new">
+
+        <TextView
+            android:id="@+id/txtHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Collect Data"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:shadowColor="#000000"
+            android:shadowRadius="0"
+            android:shadowDy="3"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="@drawable/layout_title_bar_new"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/txtHeader"
+            android:id="@+id/projname"
+            >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Project Name"
+                android:textColor="@android:color/black"
+                android:layout_weight="0.5"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_proj_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:textColor="@android:color/black"
+                 />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/projname"
+            android:id="@+id/datum"
+            >
+
+            <TextView
+                android:id="@+id/textViewDatum"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Datum Format"
+                android:textColor="@android:color/black"
+                android:layout_weight="0.5"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_datum_format"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:textColor="@android:color/black"
+                 />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/datum"
+            android:id="@+id/lat">
+
+            <TextView
+                android:id="@+id/tv_label_lat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:text="Latitude"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_lat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:text=""
+                android:textColor="@android:color/black"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/lat"
+            android:id="@+id/lng">
+
+            <TextView
+                android:id="@+id/tv_label_lng"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Longitude"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" 
+                android:layout_weight="0.5"/>
+
+            <TextView
+                android:id="@+id/tv_long"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:gravity="left"
+                android:layout_weight="0.5"
+                android:text=""
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_zone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/lng"
+			android:visibility="gone">
+
+            <TextView
+               
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Zone"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" 
+                android:layout_weight="0.5"/>
+
+            <TextView
+                android:id="@+id/tv_zone_val"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:gravity="left"
+                android:layout_weight="0.5"
+
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+             android:weightSum="1"
+            android:layout_below="@+id/ll_zone"
+            android:id="@+id/alt"
+             android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Altitude"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" 
+                android:layout_weight="0.5"/>
+            
+            
+
+            <TextView
+                android:id="@+id/tv_alt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:gravity="left"
+
+                android:layout_weight=".35"
+                android:textColor="@android:color/black"/>
+
+            <TextView
+                android:id="@+id/tv_units"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".15"
+                android:text="Mts"
+                android:textColor="@android:color/black"
+                 />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/alt"
+            android:id="@+id/sat">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:text="Sat Count"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_sat_count"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="0.5"
+                android:gravity="left"
+
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/sat"
+            android:id="@+id/pdop">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_weight="0.5"
+                android:text="PDOP"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_pdop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:gravity="left"
+                android:layout_weight="0.5"
+
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/pdop"
+            android:id="@+id/form">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Select Form"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+        
+      <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/form"
+            android:id="@+id/formspin">
+
+
+
+            <Spinner
+                android:id="@+id/spinSelectForm"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner_bg"/>
+        </LinearLayout>
+                
+
+        
+        
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:layout_below="@+id/formspin"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="0.01" >
+
+           <Button
+               android:id="@+id/btnContinue"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_weight="0.5"
+               android:background="@drawable/layout_buttons"
+               android:minHeight="10dp"
+               android:text="Continue"
+               android:textColor="#000000"
+               android:textSize="14sp" />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#88666666"
+            android:id="@+id/helplayout">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView1"
+                android:src="@drawable/left_bend2"
+                android:visibility="invisible"/>
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:id="@+id/imageViewnext"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/next1"
+                />
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/imageViewstop"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/exit3"
+                android:layout_alignParentRight="true"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2"
+                android:src="@drawable/left_bend2"
+                android:layout_below="@+id/imageViewnext"
+                android:layout_toRightOf="@+id/imageView1"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="29dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selected Project Name"
+                android:textColor="@color/white"
+                android:id="@+id/textview1"
+                android:layout_below="@+id/imageView1"
+                android:layout_toRightOf="@+id/imageView10" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView3"
+                android:src="@drawable/left_bend2"
+                android:layout_alignTop="@+id/textview1"
+                android:layout_alignLeft="@+id/imageView2" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selected Datum Format"
+                android:textColor="@color/white"
+                android:id="@+id/textview2"
+                android:layout_alignBottom="@+id/imageView2"
+                android:layout_alignRight="@+id/imageViewstop" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView4"
+                android:src="@drawable/left_bend2"
+                android:layout_alignTop="@+id/textview2"
+                android:layout_alignLeft="@+id/imageView2" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current latitude"
+                android:textColor="@color/white"
+                android:id="@+id/textview3"
+                android:layout_below="@+id/imageView3"
+                android:layout_alignLeft="@+id/textview2" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView5"
+                android:src="@drawable/left_bend2"
+                android:layout_below="@+id/imageView3"
+                android:layout_alignLeft="@+id/imageView3" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current longitude"
+                android:textColor="@color/white"
+                android:id="@+id/textview4"
+                android:layout_below="@+id/textview3"
+                android:layout_alignLeft="@+id/textview3" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView6"
+                android:src="@drawable/left_bend2"
+                android:layout_alignTop="@+id/textview4"
+                android:layout_alignLeft="@+id/imageView4" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current altitude"
+                android:textColor="@color/white"
+                android:id="@+id/textview5"
+                android:layout_below="@+id/imageView4"
+                android:layout_alignLeft="@+id/textview4" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView7"
+                android:src="@drawable/left_bend2"
+                android:layout_below="@+id/imageView4"
+                android:layout_alignLeft="@+id/imageView4" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current sat count"
+                android:textColor="@color/white"
+                android:id="@+id/textview6"
+                android:layout_alignBottom="@+id/imageView6"
+                android:layout_alignLeft="@+id/textview5" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView8"
+                android:src="@drawable/left_bend2"
+                android:layout_alignTop="@+id/textview6"
+                android:layout_alignLeft="@+id/imageView6" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current PDOP"
+                android:textColor="@color/white"
+                android:id="@+id/textview7"
+                android:layout_alignBottom="@+id/imageView7"
+                android:layout_alignLeft="@+id/textview6" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView9"
+                android:src="@drawable/right_bend"
+                android:layout_alignTop="@+id/textview7"
+                android:layout_alignLeft="@+id/imageView7" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select data collection form"
+                android:textColor="@color/white"
+                android:id="@+id/textview8"
+                android:layout_below="@+id/imageView7"
+                android:layout_alignLeft="@+id/textview7" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView11"
+                android:src="@drawable/right_bend"
+                android:layout_alignParentBottom="true"
+                android:layout_alignLeft="@+id/imageView9"
+                android:visibility="invisible"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView10"
+                android:src="@drawable/down"
+                android:layout_above="@+id/imageView11"
+                android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textview9"
+                android:text="Continue to dynamic form"
+                android:textColor="@color/white"
+                android:layout_above="@+id/imageView10"
+                android:layout_alignLeft="@+id/imageView9" />
+
+        </RelativeLayout>
+</RelativeLayout>
+
+</ScrollView>

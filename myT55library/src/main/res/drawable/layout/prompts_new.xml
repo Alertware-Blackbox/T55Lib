@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<LinearLayout
+    android:id="@+id/layout_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="10dp" 
+    android:background="@drawable/layout_background_layer_new"
+    android:fitsSystemWindows="true">
+    
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp" 
+            >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Project Name"
+                android:textColor="@android:color/black"
+                android:layout_weight="0.5"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_proj_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+        </LinearLayout>
+        
+                <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+             >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                 android:layout_marginRight="0dp"
+                android:text="WayPt No"
+                android:textColor="@android:color/black"
+                android:layout_weight="0.5"
+               android:gravity="left"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_wp_no"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"                
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:textStyle="bold" 
+                android:textColor="@android:color/black"/>
+
+        </LinearLayout>
+        
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/tv_label_lat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+               android:gravity="left"               
+                android:text="Latitude"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_lat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+               android:layout_weight="0.5"
+               android:gravity="left"
+                android:textStyle="bold" 
+                android:textColor="@android:color/black"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/tv_label_lng"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Longitude"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" 
+                android:layout_weight="0.5"/>
+
+            <TextView
+                android:id="@+id/tv_long"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                 android:gravity="left"
+                android:layout_weight="0.5"
+                android:textStyle="bold" 
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:id="@+id/ll_accuracy"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_marginTop="10dp" >-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_label_acc"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="0.5"-->
+            <!--android:gravity="left"-->
+            <!--android:text="Accuracy"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textStyle="bold" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_acc"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="0dp"-->
+            <!--android:layout_weight="0.38"-->
+            <!--android:gravity="left"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textColor="@android:color/black"/>-->
+        <!--<TextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="0dp"-->
+            <!--android:layout_weight="0.13"-->
+            <!--android:gravity="left"-->
+            <!--android:text="Mts"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textColor="@android:color/black"/>-->
+
+    <!--</LinearLayout>-->
+        <LinearLayout
+             android:id="@+id/ll_zone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+			android:visibility="gone">
+
+            <TextView
+               
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Zone"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" 
+                android:layout_weight="0.5"/>
+
+            <TextView
+                android:id="@+id/tv_zone_val"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                 android:gravity="left"
+                android:layout_weight="0.5"
+                android:textStyle="bold" 
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="top|left"
+                android:layout_gravity="top|left"
+                
+                android:text="Tag"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" 
+                 android:layout_weight="0.5"/>
+
+            <Spinner
+                android:id="@+id/spinTag"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+ 
+     <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notes"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="10dp"/>
+ 
+    <EditText
+        android:id="@+id/edNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+       android:layout_marginLeft="10dp"
+       android:layout_marginTop="5dp"
+    	android:singleLine="true">
+ 
+        <requestFocus />
+ 
+    </EditText>
+    
+       <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:gravity="bottom|center" 
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="0.01" >
+
+           <Button
+               android:id="@+id/btnPic"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_weight="0.5"
+               android:background="@drawable/layout_buttons"
+               android:minHeight="10dp"
+               android:text="Take Picture"
+               android:textColor="#000000"
+                android:textSize="14sp" />
+
+           <Button
+               android:id="@+id/btnVid"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="5dp"
+               android:layout_weight="0.5"
+               android:background="@drawable/layout_buttons"
+               android:minHeight="10dp"
+               android:text="Take Video"
+               android:textColor="#000000" 
+                android:textSize="14sp"/> 
+
+        </LinearLayout>
+ 
+</LinearLayout>
+</ScrollView>

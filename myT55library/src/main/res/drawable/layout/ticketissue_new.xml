@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/layout_background_layer_new"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/txtHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate Area"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:shadowColor="#000000"
+        android:shadowRadius="0"
+        android:shadowDy="3"
+        android:textAppearance="?android:attr/textAppearanceMedium" 
+         android:background="@drawable/layout_title_bar_new"/>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp" >
+
+                <Button
+                    android:id="@+id/btnDelete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/layout_buttons"
+                    android:text="Delete Point"
+                     android:textColor="#000000"
+                android:textSize="14sp"
+                    android:textStyle="normal" />
+
+               <Button
+                   android:id="@+id/btnAdd"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="5dp"
+                   android:layout_weight="0.5"
+                   android:background="@drawable/layout_buttons"
+                   android:text="Add Point"
+                    android:textColor="#000000"
+                android:textSize="14sp"
+                   android:textStyle="normal" />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" >
+        </LinearLayout>
+
+        <TableLayout
+            android:id="@+id/header_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*" 
+                            android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip">
+        </TableLayout>
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <ScrollView
+                android:id="@+id/sv"
+                android:layout_width="match_parent"
+                android:layout_height="224dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/textView1"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="5dp"
+                android:fadeScrollbars="true"
+                android:orientation="vertical"
+                android:scrollbarFadeDuration="2000"
+                android:scrollbarStyle="insideOverlay"
+                android:scrollbars="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <TableLayout
+                        android:id="@+id/tableLayout1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:stretchColumns="0,1" >
+                    </TableLayout>
+                </LinearLayout>
+            </ScrollView>
+        </FrameLayout>
+
+         <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0.00"
+            android:orientation="vertical" 
+            android:layout_gravity="bottom"
+            android:gravity="bottom">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Area Covered"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                 />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom"
+            android:gravity="bottom" >
+
+            <TextView
+                android:id="@+id/tvAreaCalc"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text=" "
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                 android:background="@drawable/layout_text_view"
+                android:textColor="@color/black"
+                android:textStyle="bold" 
+                 android:layout_weight="0.3"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Sq.Meters"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/black"
+                android:textStyle="bold" 
+                 android:layout_weight="0.7"
+                 android:gravity="top"
+                 android:layout_gravity="top"
+                android:id="@+id/tvUnit" />
+        </LinearLayout>
+
+<!--               <LinearLayout
+            android:id="@+id/ll3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="right"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+             android:layout_marginBottom="5dp"
+            android:gravity="bottom|center" >
+
+            <Button
+                android:id="@+id/btnExit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_buttons"
+                android:text="Back"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+        </LinearLayout> -->
+    </LinearLayout>
+
+</LinearLayout>

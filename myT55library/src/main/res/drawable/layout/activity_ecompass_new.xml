@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"    
+    tools:context=".ECompass" 
+    android:orientation="vertical"
+    android:background="@drawable/layout_background_layer_new">
+    
+    <TextView
+            android:id="@+id/txtHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Digital Compass"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:shadowColor="#000000"
+        android:shadowRadius="0"
+        android:shadowDy="3"
+        android:textAppearance="?android:attr/textAppearanceMedium" 
+         android:background="@drawable/layout_title_bar_new"/>
+
+ <LinearLayout
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+             android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+                     android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" >
+ 
+    <TextView
+        android:id="@+id/tvHeading"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="0.0 DEGREES"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+</LinearLayout>  
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/tvHeading" >
+  
+    <ImageView
+        android:id="@+id/imageViewCompassInner"       
+        
+        android:layout_centerHorizontal="true"
+        android:layout_width="300dp" 
+		android:layout_height="300dp"  
+        android:src="@drawable/compass_inner" />
+
+    <ImageView
+        android:id="@+id/imageViewCompassFrame"                
+        android:layout_centerHorizontal="true"
+        android:layout_width="300dp" 
+		android:layout_height="300dp"
+		android:layout_alignTop="@id/imageViewCompassInner"
+    	android:layout_alignLeft="@id/imageViewCompassInner"
+    	android:layout_alignRight="@id/imageViewCompassInner"
+    	android:layout_alignBottom="@id/imageViewCompassInner"
+        android:src="@drawable/compass_frame" />
+</RelativeLayout>  
+
+
+ 
+<LinearLayout
+    		android:id="@+id/ll_lat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/tv_label_lat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+               android:gravity="right"               
+                android:text="Latitude"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_lat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+               android:layout_weight="0.5"
+               android:gravity="left"
+               android:text=""
+                android:textStyle="bold" 
+                android:textColor="@android:color/black"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_lng"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/tv_label_lng"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Longitude"
+                android:textColor="@android:color/black"
+                 android:gravity="right"     
+                android:textStyle="bold" 
+                android:layout_weight="0.5"/>
+
+            <TextView
+                android:id="@+id/tv_long"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                 android:gravity="left"
+                android:layout_weight="0.5"
+                android:text=""
+                android:textStyle="bold" 
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+       <LinearLayout
+             android:id="@+id/ll_zone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+			android:visibility="gone">
+
+            <TextView
+               
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Zone"
+                android:gravity="right"   
+                android:textColor="@android:color/black"
+                android:textStyle="bold" 
+                android:layout_weight="0.5"/>
+
+            <TextView
+                android:id="@+id/tv_zone_val"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                 android:gravity="left"
+                 android:text=""
+                android:layout_weight="0.5"
+                android:textStyle="bold" 
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+</LinearLayout>
