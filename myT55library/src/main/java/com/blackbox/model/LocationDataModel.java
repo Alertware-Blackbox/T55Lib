@@ -16,6 +16,33 @@ public class LocationDataModel {
     public String  Time;
     public String  GPS_Fix_Status;
     public String  Satelite_Used;
+    public String RMCDate;
+    public String mode;
+    public String ortho_height;
+
+    public String getOrtho_height() {
+        return ortho_height;
+    }
+
+    public void setOrtho_height(String ortho_height) {
+        this.ortho_height = ortho_height;
+    }
+
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
+    public String getRMCDate() {
+        return RMCDate;
+    }
+
+    public void setRMCDate(String RMCDate) {
+        this.RMCDate = RMCDate;
+    }
 
     public String getSatelite_Used() {
         return Satelite_Used;

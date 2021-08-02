@@ -101,9 +101,10 @@ public class BluetoothGPSService extends Service implements Parcelable {
     private static final BleWrapperUiCallbacks NULL_CALLBACK = new BleWrapperUiCallbacks.Null();
 
     private long UTC_TIMEZONE=1470960000;
-    private String OUTPUT_DATE_FORMATE="dd/MM/yy - hh:mm a";
+    private String OUTPUT_DATE_FORMATE="hh:mm a";
+    private String OUTPUT_DATE_FORMATE1="dd/MM/yyyy";
     String wpDate, wpTime;
-
+    Date date1;
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -406,6 +407,7 @@ public class BluetoothGPSService extends Service implements Parcelable {
 
                 String ew = splitter.next();
                 String altRef = splitter.next();
+                _locationDataModel.setOrtho_height(altRef);
                 String sat = splitter.next();
                 if (sat == "NF")
                     sat = "No Fix";
@@ -524,6 +526,7 @@ public class BluetoothGPSService extends Service implements Parcelable {
                 String quality = splitter.next();
                 // Number of satellites being tracked
                 String nbSat = splitter.next();
+                _locationDataModel.setViewed_satellite(nbSat);
                 // Horizontal dilution of position (float)
                 String hdop = splitter.next();
                 // Altitude, Meters, above mean sea level
@@ -604,19 +607,8 @@ public class BluetoothGPSService extends Service implements Parcelable {
                 String bearing = splitter.next();
                 // UTC date of fix DDMMYY
                 String date = splitter.next();
-
-                String dateStr = date + time;
-                SimpleDateFormat df = new SimpleDateFormat("MMM dd, yyyy HH:mm:ss a", Locale.ENGLISH);
-                df.setTimeZone(TimeZone.getTimeZone("UTC"));
-
-                try {
-                   long date1 = Long.parseLong(String.valueOf(df.parse(dateStr)));
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-                df.setTimeZone(TimeZone.getDefault());
-                String formattedDate = df.format(date);
-
+                long l=Long.parseLong(date);
+                NMEAGPRMCDate(l);
 
                 // Magnetic Variation ddd.D
                 String magn = splitter.next();
@@ -671,6 +663,7 @@ public class BluetoothGPSService extends Service implements Parcelable {
 				 */
                 // mode : A Auto selection of 2D or 3D fix / M = manual
                 String mode = splitter.next();
+                _locationDataModel.setMode(mode);
                 // fix type  : 1 - no fix / 2 - 2D / 3 - 3D
                 String fixType = splitter.next();
                 // discard PRNs of satellites used for fix (space for 12)
@@ -748,7 +741,19 @@ public class BluetoothGPSService extends Service implements Parcelable {
         return null;
 
     }
+    public static String NMEAGPRMCDate(long d)
+    {
+        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+        Date date = new Date(d*1000L); // *1000 is to convert seconds to milliseconds
+        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd  yyyy "); // the format of your date
+        sdf.setTimeZone(TimeZone.getTimeZone("GMT-4"));
+        _locationDataModel.setRMCDate(String.valueOf(sdf.format(date)));
+        return sdf.format(date);
 
+       /* String date3 = DateFormat.format(" MMM dd  yyyy ", cal).toString(); // the format of your date
+        // sdf.setTimeZone(TimeZone.getTimeZone("GMT-4"));
+        _locationDataModel.setRMCDate(date3);*/
+    }
     public double parseNmeaLatitude(String lat, String orientation) {
         double latitude = 0.0;
         if (lat != null && orientation != null && !lat.equals("") && !orientation.equals("")) {
