@@ -620,6 +620,8 @@ public class BluetoothGPSService extends Service implements Parcelable {
                // NMEAGPRMCDate(l);
                 String frst_two_date=date.substring(0,2)+ "-" + date.substring(2,4) + "-" + date.substring(4,6);
                 _locationDataModel.setRMCDate(frst_two_date);
+               // NMEAGPRMCDate(l);
+
                 // Magnetic Variation ddd.D
                 String magn = splitter.next();
                 // Magnetic variation direction (E/W)
