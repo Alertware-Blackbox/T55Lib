@@ -531,6 +531,9 @@ public class BluetoothGPSService extends Service implements Parcelable {
                 String hdop = splitter.next();
                 // Altitude, Meters, above mean sea level
                 String alt = splitter.next();
+                _locationDataModel.setAltitude_MSL(alt);
+
+
                 // Height of geoid (mean sea level) above WGS84 ellipsoid
                 String geoAlt = splitter.next();
                 // time in seconds since last DGPS update
@@ -554,7 +557,7 @@ public class BluetoothGPSService extends Service implements Parcelable {
                     }
                     if (alt != null && !alt.equals("")) {
                         fix.setAltitude(Double.parseDouble(alt));
-                        _locationDataModel.setAltitude_MSL(alt);
+                      //  _locationDataModel.setAltitude_MSL(alt);
                     }
                     long fixTimestamp = parseNmeaTime(time);
                     fix.setTime(fixTimestamp);
@@ -688,9 +691,10 @@ public class BluetoothGPSService extends Service implements Parcelable {
 
                 // Horizontal dilution of precision (float)
                 String hdop = splitter.next();
-                _locationDataModel.setAltitude_MSL(String.valueOf(Float.parseFloat(hdop) * precision));
+              //  _locationDataModel.setAltitude_MSL(String.valueOf(Float.parseFloat(hdop) * precision));
                 // Vertical dilution of precision (float)
                 String vdop = splitter.next();
+
             } else if (command.equals("GPVTG")) {
 				/*  $GPVTG,054.7,T,034.4,M,005.5,N,010.2,K*48
 					where:

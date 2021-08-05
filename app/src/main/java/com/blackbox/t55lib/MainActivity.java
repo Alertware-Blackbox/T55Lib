@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                         });
                     }
                 };
-                timer.schedule(hourlyTask, 0L, 3000);
+                timer.schedule(hourlyTask, 0L, 5000);
             }
         }
    /* }
