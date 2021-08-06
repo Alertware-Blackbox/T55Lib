@@ -14,7 +14,6 @@ public class LocationDataModel {
     public String  accuracy_V;
     public String  data_Date;
     public String  Time;
-    public String  GPS_Fix_Status;
     public String  Satelite_Used;
     public String RMCDate;
     public String mode;
@@ -158,13 +157,7 @@ public class LocationDataModel {
         Time = time;
     }
 
-    public String getGPS_Fix_Status() {
-        return GPS_Fix_Status;
-    }
 
-    public void setGPS_Fix_Status(String GPS_Fix_Status) {
-        this.GPS_Fix_Status = GPS_Fix_Status;
-    }
 }
 
 

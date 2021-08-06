@@ -441,7 +441,7 @@ public class BluetoothGPSService extends Service implements Parcelable {
                 String tdop = splitter.next();    //TDOP, Time Dilution of Precision
                 _locationDataModel.setPDOP(tdop);
                 String satelit = splitter.next();  //Number of satellites used in the navigation solution
-                _locationDataModel.setUsed_satellite(satelit);
+              //  _locationDataModel.setUsed_satellite(satelit);
                 String reserved = splitter.next();    //Reserved, always set to 0
                 String dr = splitter.next();  //DR used
                 Location fix = new Location(GPS_MOCK_PROVIDER);
@@ -526,11 +526,14 @@ public class BluetoothGPSService extends Service implements Parcelable {
                 String quality = splitter.next();
                 // Number of satellites being tracked
                 String nbSat = splitter.next();
-                _locationDataModel.setViewed_satellite(nbSat);
+                _locationDataModel.setUsed_satellite(nbSat);
                 // Horizontal dilution of position (float)
                 String hdop = splitter.next();
                 // Altitude, Meters, above mean sea level
                 String alt = splitter.next();
+                _locationDataModel.setAltitude_MSL(alt);
+
+
                 // Height of geoid (mean sea level) above WGS84 ellipsoid
                 String geoAlt = splitter.next();
                 // time in seconds since last DGPS update
@@ -554,7 +557,7 @@ public class BluetoothGPSService extends Service implements Parcelable {
                     }
                     if (alt != null && !alt.equals("")) {
                         fix.setAltitude(Double.parseDouble(alt));
-                        _locationDataModel.setAltitude_MSL(alt);
+                      //  _locationDataModel.setAltitude_MSL(alt);
                     }
                     long fixTimestamp = parseNmeaTime(time);
                     fix.setTime(fixTimestamp);
@@ -688,9 +691,10 @@ public class BluetoothGPSService extends Service implements Parcelable {
 
                 // Horizontal dilution of precision (float)
                 String hdop = splitter.next();
-                _locationDataModel.setAltitude_MSL(String.valueOf(Float.parseFloat(hdop) * precision));
+              //  _locationDataModel.setAltitude_MSL(String.valueOf(Float.parseFloat(hdop) * precision));
                 // Vertical dilution of precision (float)
                 String vdop = splitter.next();
+
             } else if (command.equals("GPVTG")) {
 				/*  $GPVTG,054.7,T,034.4,M,005.5,N,010.2,K*48
 					where:
@@ -745,6 +749,22 @@ public class BluetoothGPSService extends Service implements Parcelable {
                 // for NMEA 0183 version 3.00 active the Mode indicator field is added
                 // Mode indicator, (A=autonomous, D=differential, E=Estimated, N=not valid, S=Simulator )
             } else if (command.equals("GPGSV")) {
+
+                // latitude ddmm.M
+                String lat = splitter.next();
+                // direction (N/S)
+                String latDir = splitter.next();
+                // sat view
+                String sat_view = splitter.next();
+                _locationDataModel.setViewed_satellite(sat_view);
+                // direction (E/W)
+                String lonDir = splitter.next();
+                // UTC time of fix HHmmss.S
+                String time = splitter.next();
+                // fix status (A/V)
+                String status = splitter.next();
+                // for NMEA 0183 version 3.00 active the Mode indicator field is added
+                // Mode indicator, (A=autonomous, D=differential, E=Estimated, N=not valid, S=Simulator )
 
             }
         } else {
